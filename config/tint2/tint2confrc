@@ -1,0 +1,7 @@
+#---------------------------------------------
+# TINT2CONF CONFIG FILE
+default_theme = /home/jrouly/.config/tint2/my_config.tint2rc
+cmd_property = python2 /usr/bin/tintwizard.py
+width = 580
+height = 173
+

@@ -1,0 +1,36 @@
+# ~/.conkyrc
+#
+double_buffer yes
+background yes
+
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=8
+xftalpha 0.8
+
+update_interval 1.0
+
+total_run_times 0
+
+own_window yes
+own_window_type override
+own_window_transparent no
+own_window_colour black
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+
+minimum_size 1366 5
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+border_width 1
+default_color grey
+default_shade_color lightgrey
+default_outline_color white
+alignment bottom_left
+gap_x 0
+gap_y 5
+no_buffers yes
+uppercase no
+
+TEXT
+ ${if_mpd_playing}$mpd_artist - ${color slategrey}${scroll 80 $mpd_title}$color - $mpd_album «${if_match "$mpd_status" == "Playing"}${color lightgreen}$mpd_status$endif${if_match "$mpd_status" == "Paused"}${color red}$mpd_status$endif$color» $mpd_elapsed/$mpd_length ${mpd_bar 5,200}$endif $alignr${exec sh /home/jrouly/.config/conky/volume.sh} · $cpu% · ${acpitemp}°C 

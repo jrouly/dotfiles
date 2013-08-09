@@ -1,0 +1,18 @@
+/home/jrouly/bin/wallpaper &  ## wallpaper gallery script
+/home/jrouly/bin/battery-monitor.sh & ## battery power level monitor
+
+urxvtd &                      ## terminal daemon (increases responsiveness)
+clipit &                      ## clipboard manager
+xcompmgr -n &                 ## transparency manager
+tint2 &                       ## panel
+dbus-launch pcmanfm -d &      ## pcmanfm daemon (increases responsiveness)
+mpd &                         ## music player daemon
+amixer -q set Master mute &   ## start as muted
+conky -d -c ~/.config/conky/conkyrc &    ## system monitor
+xbacklight -set 30 -time 0 &  ## turn down initial screen brightness
+dropboxd &                    ## dropbox daemon
+
+notification-daemon &         ## notification daemon
+
+xset dpms 0 0 120 &           ## set screen blanking to 2 minutes, if enabled
+xset -dpms &                  ## disable screen blanking
