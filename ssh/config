@@ -1,0 +1,10 @@
+Host zeus
+  User jrouly
+  HostName zeus.vse.gmu.edu
+  GSSAPIAuthentication no
+  LogLevel Quiet
+
+Host momo
+  User jrouly
+  HostName 72.219.247.217
+  GSSAPIAuthentication no

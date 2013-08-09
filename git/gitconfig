@@ -1,0 +1,5 @@
+[user]
+	email = michel.rouly@gmail.com
+	name = Michel Rouly
+[push]
+	default = simple
