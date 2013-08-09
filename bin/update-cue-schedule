@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd ~/documents/bus_schedules/
-wget http://www.fairfaxva.gov/cueBus/GreenRoute_S.pdf -O cue-green.pdf
-wget http://www.fairfaxva.gov/cueBus/GoldRoute_S.pdf -O cue-gold.pdf
-

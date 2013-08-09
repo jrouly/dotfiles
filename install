@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Define dotfiles directory and ensure it exists
+dotfiles="$HOME/.dotfiles"
+if [[ ! -n "$dotfiles" ]]
+then
+  echo "Could not find ${dotfiles}!" >&2
+  exit 1
+fi
+
+# Link in essential configuration files
+
+
+# Create the binaries directory
+mkdir -p "$HOME/bin"
+ln -insv $HOME/.dotfiles/bin/* $HOME/bin

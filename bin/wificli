@@ -1,1 +1,0 @@
-nmcli -p con up id "$1" iface wlan0 --timeout 120
