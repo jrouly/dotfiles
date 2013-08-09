@@ -21,7 +21,6 @@ PATH=$PATH:/usr/lib/hive/bin
 PATH=$PATH:/usr/lib/ec2-api-tools/bin
 PATH=$PATH:/usr/lib/elastic-mapreduce-cli/
 PATH=$PATH:/usr/lib/visualvm/bin/
-PATH=$PATH:/home/jrouly/.gem/ruby/2.0.0/bin
 
 VBOX_USB=usbfs
 
