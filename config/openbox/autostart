@@ -1,4 +1,5 @@
 /home/jrouly/bin/wallpaper &  ## wallpaper gallery script
+/home/jrouly/bin/battery-monitor.sh & ## battery monitoring script
 
 urxvtd &                      ## terminal daemon (increases responsiveness)
 clipit &                      ## clipboard manager

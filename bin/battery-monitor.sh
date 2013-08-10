@@ -21,16 +21,25 @@ then
   if [[ $batt -le $critical_lvl ]];
   then
     notify-send -u critical -i $critical_icon "Critical battery warning: "$batt"% remaining."
+    sleep 60 # Short delay
 
   # BATTERY VERY LOW
   elif [[ $batt -le $verylow_lvl ]];
   then
     notify-send -u critical -i $verylow_icon "Very low battery warning: "$batt"% remaining."
+    sleep 120 # Medium delay
 
   # BATTERY LOW
   elif [[ $batt -le $low_lvl ]];
   then
     notify-send -u critical -i $low_icon "Low battery warning: "$batt"% remaining."
+    sleep 120 # Medium delay
+
+  else
+    sleep 240 # Long delay
   fi
 
 fi
+
+# Recursively repeat script.
+$0
