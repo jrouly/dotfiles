@@ -8,7 +8,7 @@ tint2 &                       ## panel
 dbus-launch pcmanfm -d &      ## pcmanfm daemon (increases responsiveness)
 mpd &                         ## music player daemon
 amixer -q set Master mute &   ## start as muted
-conky -d -c ~/.config/conky/conkyrc &    ## system monitor
+conky -d -c ~/.config/conky/openbox.conkyrc &    ## system monitor
 xbacklight -set 30 -time 0 &  ## turn down initial screen brightness
 dropboxd &                    ## dropbox daemon
 
