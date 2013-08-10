@@ -50,4 +50,3 @@ alias sup='sudo pacman -Syu'
 
 
 complete -cf man
-complete -cf sudo
