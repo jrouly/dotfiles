@@ -371,7 +371,7 @@
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
-        <command>urxvtc -e pianobar</command>
+        <command>pithos</command>
       </action>
     </keybind>
     <keybind key="W-i">
