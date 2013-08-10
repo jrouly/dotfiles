@@ -1,6 +1,8 @@
 #!/bin/bash
 # Script to send notifications if battery life is low.
 
+delay=240
+
 low_lvl=30
 verylow_lvl=20
 critical_lvl=10
@@ -21,25 +23,26 @@ then
   if [[ $batt -le $critical_lvl ]];
   then
     notify-send -u critical -i $critical_icon "Critical battery warning: "$batt"% remaining."
-    sleep 60 # Short delay
+    delay=60 # Short delay
 
   # BATTERY VERY LOW
   elif [[ $batt -le $verylow_lvl ]];
   then
     notify-send -u critical -i $verylow_icon "Very low battery warning: "$batt"% remaining."
-    sleep 120 # Medium delay
+    delay=120 # Medium delay
 
   # BATTERY LOW
   elif [[ $batt -le $low_lvl ]];
   then
     notify-send -u critical -i $low_icon "Low battery warning: "$batt"% remaining."
-    sleep 120 # Medium delay
+    delay=120 # Medium delay
 
   else
-    sleep 240 # Long delay
+    delay=240 # Long delay
   fi
 
 fi
 
-# Recursively repeat script.
+# Sleep and then recursively repeat script.
+sleep $delay
 $0
