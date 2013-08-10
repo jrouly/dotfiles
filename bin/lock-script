@@ -1,6 +1,6 @@
 #!/bin/bash
 
-( slock && xset dpms 0 0 120 && xset -dpms ) &
+( slock && xset -dpms && xset s off ) &
 sleep 1
 xset +dpms
 xset dpms 0 0 2

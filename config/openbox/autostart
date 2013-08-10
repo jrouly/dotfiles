@@ -14,5 +14,4 @@ dropboxd &                    ## dropbox daemon
 
 notification-daemon &         ## notification daemon
 
-xset dpms 0 0 120 &           ## set screen blanking to 2 minutes, if enabled
-xset -dpms &                  ## disable screen blanking
+xset -dpms & xset s off &     ## disable screen blanking
