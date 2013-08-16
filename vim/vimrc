@@ -1,7 +1,7 @@
 " Vim behavior
 filetype plugin on " turn on filetype recognition
 syntax on          " turn on syntax highlighting
-autocmd FileType tex setlocal spell spelllang=en_us
+" autocmd FileType tex setlocal spell spelllang=en_us
 set mouse=a        " enable mouse interactivity
 
 " General UI stuff

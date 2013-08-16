@@ -568,7 +568,7 @@
 			</item>
 		</menu>
 		<separator/>
-		<menu id="40" label="OpenBox">
+		<menu id="OB-exit-menu" label="OpenBox">
 			<menu id="client-list-menu"/>
 			<item label="Reconfigure">
 				<action name="Reconfigure"/>
