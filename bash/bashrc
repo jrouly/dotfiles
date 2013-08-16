@@ -44,7 +44,7 @@ alias synctime='sudo ntpd -qg'
 
 alias off='systemctl poweroff'
 alias reboot='systemctl reboot'
-alias pms='systemctl suspend'
+alias pms='systemctl suspend && /home/jrouly/bin/lock-script'
 
 alias sup='sudo pacman -Syu'
 
