@@ -11,6 +11,7 @@ amixer -q set Master mute &   ## start as muted
 conky -d -c ~/.config/conky/openbox.conkyrc &    ## system monitor
 xbacklight -set 30 -time 0 &  ## turn down initial screen brightness
 dropboxd &                    ## dropbox daemon
+sparkleshare start &          ## sparkleshare daemon
 
 notification-daemon &         ## notification daemon
 
