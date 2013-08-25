@@ -16,6 +16,3 @@ owncloud &                    ## ownCloud-client
 notification-daemon &         ## notification daemon
 
 xset -dpms & xset s off &     ## disable screen blanking
-
-## gilgamesh (UAC login) autostart
-/home/jrouly/bin/gilgamesh.py -c /home/jrouly/.gilgamesh/gilgamesh.ini.priv &
