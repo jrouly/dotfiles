@@ -11,8 +11,11 @@ amixer -q set Master mute &   ## start as muted
 conky -d -c ~/.config/conky/openbox.conkyrc &    ## system monitor
 xbacklight -set 30 -time 0 &  ## turn down initial screen brightness
 dropboxd &                    ## dropbox daemon
-sparkleshare start &          ## sparkleshare daemon
+owncloud &                    ## ownCloud-client 
 
 notification-daemon &         ## notification daemon
 
 xset -dpms & xset s off &     ## disable screen blanking
+
+## gilgamesh (UAC login) autostart
+/home/jrouly/bin/gilgamesh.py -c /home/jrouly/.gilgamesh/gilgamesh.ini.priv &
