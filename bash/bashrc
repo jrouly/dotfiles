@@ -8,7 +8,10 @@
 # set up amazon aws credentials for ec2 api tools
 . /home/jrouly/.ec2/config
 
+
+# EXPORT ENVIRONMENT VARIABLES
 export SVN_EDITOR=vim
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 
 PS1='[\u@\h \W]\$ '
 
