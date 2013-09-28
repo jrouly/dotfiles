@@ -8,3 +8,8 @@ Host momo
   User jrouly
   HostName 129.174.177.250
   GSSAPIAuthentication no
+
+Host rouly.net
+  User michel
+  HostName 129.174.177.246
+  GSSAPIAuthentication no
