@@ -1,7 +1,7 @@
 " Vim behavior
 filetype plugin on " turn on filetype recognition
 syntax on          " turn on syntax highlighting
-" autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType tex setlocal spell spelllang=en_us
 set mouse=a        " enable mouse interactivity
 
 " General UI stuff
@@ -17,3 +17,4 @@ set shiftwidth=2   " indent by 2 columns
 set shiftround     " always indent to the nearest tabstop
 set expandtab      " use spaces instead of tabs
 set smarttab       " use spaces at the start of a line, spaces elsewhere
+set tw=75          " set hard word-wrap column at 75

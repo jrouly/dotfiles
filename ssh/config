@@ -13,3 +13,13 @@ Host rouly.net
   User michel
   HostName 129.174.177.246
   GSSAPIAuthentication no
+
+Host bogart
+  User jrouly
+  HostName 129.174.177.243
+  GSSAPIAuthentication no
+
+Host golem
+  User jrouly
+  HostName 129.174.177.241
+  GSSAPIAuthentication no
