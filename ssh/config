@@ -16,7 +16,7 @@ Host rouly.net
 
 Host bogart
   User jrouly
-  HostName 129.174.177.243
+  HostName 129.174.177.244
   GSSAPIAuthentication no
 
 Host golem
