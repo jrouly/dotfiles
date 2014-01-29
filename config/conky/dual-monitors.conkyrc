@@ -1,0 +1,41 @@
+# ~/.conkyrc
+#
+double_buffer yes
+background yes
+
+use_xft yes
+xftfont Sans:size=7
+xftalpha 0.8
+
+update_interval 1.0
+
+total_run_times 0
+
+own_window yes
+own_window_type override
+own_window_transparent no
+own_window_colour 2d2d2d
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+
+minimum_size 70 60
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+border_width 0
+default_color grey
+default_shade_color lightgrey
+default_outline_color white
+alignment top_left
+gap_x 0
+gap_y 35
+no_buffers yes
+uppercase no
+
+TEXT
+${color 888888}VOL  $alignr$color${exec sh /home/jrouly/.config/conky/volume.sh} ${color d64937}
+${color 888888}PKGS $alignr$color${execi 60 sh /home/jrouly/.config/conky/packages.sh} ${color d64937}
+${color 888888}BTRY $alignr$color${battery_percent BAT1}%${execi 30 sh /home/jrouly/.config/conky/battery.sh} ${color d64937}
+${color 888888}CPU  $alignr$color$cpu% ${color d64937}
+${color 888888}RAM  $alignr$color$mem ${color d64937}
+${color 888888}TEMP $alignr$color${acpitemp}°C 

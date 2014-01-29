@@ -8,6 +8,7 @@ set mouse=a        " enable mouse interactivity
 set number         " show line numbers
 set ruler          " always show information at the bottom
 set ignorecase     " make searches case insensitive
+set colorcolumn=80 " display color column
 
 " Text formatting
 set autoindent     " automatically indent
@@ -18,3 +19,7 @@ set shiftround     " always indent to the nearest tabstop
 set expandtab      " use spaces instead of tabs
 set smarttab       " use spaces at the start of a line, spaces elsewhere
 set tw=75          " set hard word-wrap column at 75
+set hlsearch       " set search highlighting
+
+" <Ctrl-l> redraws the screen and removes search highlighting
+nnoremap <silent> <C-l> :nohl<CR><C-l>

@@ -440,11 +440,6 @@
         <command>xbacklight -dec 30</command>
       </action>
     </keybind>
-    <keybind key="W-x">
-      <action name="Execute">
-        <command>xset dpms force off</command>
-      </action>
-    </keybind>
     <keybind key="Print">
       <action name="Execute">
         <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -e 'mv $f ~/images/shots/'</command>

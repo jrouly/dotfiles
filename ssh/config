@@ -23,3 +23,12 @@ Host golem
   User jrouly
   HostName 129.174.177.242
   GSSAPIAuthentication no
+
+Host srct-vahack
+  User jrouly
+  HostName srct-vahack
+  GSSAPIAuthentication no
+
+Host groupfit
+  User jrouly
+  HostName 162.243.32.223

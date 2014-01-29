@@ -16,3 +16,5 @@ owncloud &                    ## ownCloud-client
 notification-daemon &         ## notification daemon
 
 xset -dpms & xset s off &     ## disable screen blanking
+
+redshift-gtk -l 38.8308:77.3075 & ## screen color warmth daemon

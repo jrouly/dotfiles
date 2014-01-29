@@ -10,7 +10,7 @@
 
 
 # EXPORT ENVIRONMENT VARIABLES
-export SVN_EDITOR=vim
+export EDITOR=vim
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 
 PS1='[\u@\h \W]\$ '
@@ -18,6 +18,8 @@ PS1='[\u@\h \W]\$ '
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
 PATH=$PATH:.:/home/jrouly/bin
+PATH=$PATH:.:/home/jrouly/.gem/ruby/2.0.0/bin/
+PATH=$PATH:/home/jrouly/.meteor
 PATH=$PATH:/usr/lib/hadoop/bin
 PATH=$PATH:/usr/lib/mahout/bin
 PATH=$PATH:/usr/lib/hive/bin
