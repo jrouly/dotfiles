@@ -35,6 +35,7 @@ for module in $input; do
         ln -insv "$dotfiles/bash/bashrc"            "$HOME/.bashrc"
         ln -insv "$dotfiles/git/gitconfig"          "$HOME/.gitconfig"
         ln -insv "$dotfiles/vim/vimrc"              "$HOME/.vimrc"
+        ln -insv "$dotfiles/templates"              "$HOME/.templates"
         for f in $HOME/.*; do file $f | grep "broken"; done
         ;;
 
