@@ -11,7 +11,7 @@
 
 # EXPORT ENVIRONMENT VARIABLES
 export EDITOR=vim
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 
 PS1='[\u@\h \W]\$ '
 

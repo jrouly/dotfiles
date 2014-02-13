@@ -64,6 +64,6 @@ URxvt.scrollstyle:	  	plain
 URxvt.scrollColor:      #323232
 
 URxvt.perl-ext-common:  default,matcher
-URxvt.urlLauncher:		  /usr/bin/firefox
+URxvt.url-launcher:		  /usr/bin/firefox
 URxvt.colorUL:          #4682B4
 URxvt.matcher.button:		1
