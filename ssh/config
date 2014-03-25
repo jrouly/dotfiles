@@ -10,8 +10,8 @@ Host momo
   GSSAPIAuthentication no
 
 Host rouly.net
-  User michel
-  HostName 129.174.177.246
+  User jrouly
+  HostName rouly.net
   GSSAPIAuthentication no
 
 Host bogart
