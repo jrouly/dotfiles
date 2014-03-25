@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+source /usr/share/git/completion/git-completion.bash
+
 # set up amazon aws credentials for ec2 api tools
 . /home/jrouly/.ec2/config
 
