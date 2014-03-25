@@ -1,6 +1,9 @@
 #!/bin/bash
 # Script to send notifications if battery life is low.
 
+while true
+do
+
 delay=240
 
 low_lvl=30
@@ -45,4 +48,5 @@ fi
 
 # Sleep and then recursively repeat script.
 sleep $delay
-$0
+
+done
