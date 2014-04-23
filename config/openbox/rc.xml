@@ -912,6 +912,9 @@
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
+    <application name="Buddy List">
+      <maximized>vertical</maximized>
+    </application>
     <application name="galculator">
       <decor>no</decor>
     </application>
