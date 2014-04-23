@@ -20,7 +20,7 @@ PS1='[\u@\h \W]\$ '
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
 PATH=$PATH:.:/home/jrouly/bin
-PATH=$PATH:.:/home/jrouly/.gem/ruby/2.0.0/bin/
+PATH=$PATH:.:/home/jrouly/.gem/ruby/2.1.0/bin/
 PATH=$PATH:/home/jrouly/.meteor
 PATH=$PATH:/usr/lib/hadoop/bin
 PATH=$PATH:/usr/lib/mahout/bin
@@ -51,7 +51,7 @@ alias synctime='sudo ntpd -qg'
 
 alias off='systemctl poweroff'
 alias reboot='systemctl reboot'
-alias pms='systemctl suspend && /home/jrouly/bin/lock-script'
+alias pms='systemctl suspend || /home/jrouly/bin/lock-script'
 
 alias sup='sudo pacman -Syu'
 
