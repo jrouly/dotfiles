@@ -1,17 +1,58 @@
-" Vim behavior
+" Enable Pathogen
+
+execute pathogen#infect()
+
+" General Vim behavior
+set nocompatible   " stop vim from emulating vi
 filetype plugin on " turn on filetype recognition
 syntax on          " turn on syntax highlighting
 autocmd FileType tex setlocal spell spelllang=en_us
 set mouse=a        " enable mouse interactivity
+set ttyfast        " scroll quickly
+set backspace=2    " use backspace everywhere
+set fileformats=unix,dos,mac " try to recognize line endings
+
+
+" Search behaviour
+set ignorecase     " make searches case insensitive
+set smartcase      " case sensitive when uppercase present
+set hlsearch       " highlight search terms
+
+" center the screen on search terms and undos/redos
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap u uzz
+nnoremap <Ctrl-R> <Ctrl-R>zz
+
 
 " General UI stuff
 set number         " show line numbers
+set title          " always show title
 set ruler          " always show information at the bottom
-set ignorecase     " make searches case insensitive
+set showcmd        " always show current command
+set showmode       " always show current mode
+set showmatch      " show matching brackets & parentheses
+set list listchars=tab:▸·,trail:·
+
+
+" Coloured columns
 set colorcolumn=80 " display color column
+set cursorline
+set cursorcolumn   " show the cursor column
+highlight CursorColumn ctermbg=Blue
+
+
+" Solarized settings
+set t_Co=256
+let g:solarized_visibility="high" " high visibility for line endings
+let g:solarized_termcolors=256    " 256 colors
+colorscheme solarized " for solarized
+set background=light   " for solarized
+
 
 " Text formatting
 set autoindent     " automatically indent
+set cindent        " better automatic indenting
 set tabstop=2      " tab spacing
 set softtabstop=2  " unify
 set shiftwidth=2   " indent by 2 columns
@@ -19,7 +60,25 @@ set shiftround     " always indent to the nearest tabstop
 set expandtab      " use spaces instead of tabs
 set smarttab       " use spaces at the start of a line, spaces elsewhere
 set tw=75          " set hard word-wrap column at 75
-set hlsearch       " set search highlighting
+filetype indent on " enable automatic indentation based on filetype
+
+
+" File encoding
+set termencoding=utf-8
+set encoding=utf-8
+
 
 " <Ctrl-l> redraws the screen and removes search highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" Autocompletion for python
+let g:pydiction_location="~/.vim/bundle/pydiction/complete-dict"
+let g:pydiction_menu_height=5
+
+
+" Code folding
+set foldmethod=marker
+au BufWinEnter * silent! loadview
+set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+nnoremap <space> za
+
