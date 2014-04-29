@@ -21,18 +21,16 @@ set hlsearch       " highlight search terms
 " center the screen on search terms and undos/redos
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap u uzz
-nnoremap <Ctrl-R> <Ctrl-R>zz
 
 
 " General UI stuff
 set number         " show line numbers
-set title          " always show title
-set ruler          " always show information at the bottom
 set showcmd        " always show current command
 set showmode       " always show current mode
 set showmatch      " show matching brackets & parentheses
 set list listchars=tab:▸·,trail:·
+set title          " always show title
+set ruler          " always show information at the bottom
 
 
 " Coloured columns
