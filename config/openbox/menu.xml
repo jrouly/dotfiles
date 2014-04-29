@@ -559,6 +559,20 @@
 					</execute>
 				</action>
 			</item>
+			<item label="urxvt">
+				<action name="Execute">
+					<execute>
+						urxvt
+					</execute>
+				</action>
+			</item>
+			<item label="xterm">
+				<action name="Execute">
+					<execute>
+						xterm
+					</execute>
+				</action>
+			</item>
 			<item label="VirtualBox">
 				<action name="Execute">
 					<execute>
