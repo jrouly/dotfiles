@@ -33,6 +33,7 @@ VBOX_USB=usbfs
 
 
 # ALIAS COMMANDS TO EASIER COMMANDS
+alias za='zathura'
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ll -A'
@@ -46,6 +47,9 @@ alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias vi='vim'
 alias py='python2.7'
+alias slack='chromium --app=http://srct.slack.com'
+alias uptime='uptime -p'
+alias free='free -h'
 
 alias synctime='sudo ntpd -qg'
 
