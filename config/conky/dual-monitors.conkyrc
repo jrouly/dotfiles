@@ -17,7 +17,7 @@ own_window_transparent no
 own_window_colour 2d2d2d
 own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
 
-minimum_size 70 60
+minimum_size 1918 10
 draw_shades no
 draw_outline no
 draw_borders no
@@ -26,16 +26,11 @@ border_width 0
 default_color grey
 default_shade_color lightgrey
 default_outline_color white
-alignment top_left
-gap_x 0
-gap_y 35
+alignment bottom_left
+gap_x 1366
+gap_y 5 #35
 no_buffers yes
 uppercase no
 
 TEXT
-${color 888888}VOL  $alignr$color${exec sh /home/jrouly/.config/conky/volume.sh} ${color d64937}
-${color 888888}PKGS $alignr$color${execi 60 sh /home/jrouly/.config/conky/packages.sh} ${color d64937}
-${color 888888}BTRY $alignr$color${battery_percent BAT1}%${execi 30 sh /home/jrouly/.config/conky/battery.sh} ${color d64937}
-${color 888888}CPU  $alignr$color$cpu% ${color d64937}
-${color 888888}RAM  $alignr$color$mem ${color d64937}
-${color 888888}TEMP $alignr$color${acpitemp}°C 
+ ${color 888888}VOL $color${exec sh /home/jrouly/.config/conky/volume.sh} ${color d64937}• ${color 888888}MPD $color[${if_match "$mpd_status" == "Playing"}${color lightgreen}»$endif${if_match "$mpd_status" == "Paused"}${color d64937}II$endif$color] $color${if_mpd_playing}$color$mpd_artist - ${scroll 80 $mpd_title} ($mpd_percent%)$endif $alignr${color 888888}PKGS $color${execi 60 sh /home/jrouly/.config/conky/packages.sh} ${color d64937}• ${color 888888}BTRY $color${battery_percent BAT1}%${execi 30 sh /home/jrouly/.config/conky/battery.sh} ${color d64937}• ${color 888888}CPU $color$cpu% ${color d64937}• ${color 888888}RAM $color$mem ${color d64937}• ${color 888888}TEMP $color${acpitemp}°C ${color d64937}• $color${execi 30 /home/jrouly/.config/conky/ip.sh} 
