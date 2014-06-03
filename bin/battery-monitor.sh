@@ -9,6 +9,7 @@ delay=240
 low_lvl=30
 verylow_lvl=20
 critical_lvl=10
+shutdown_lvl=2
 
 low_icon=/usr/share/icons/gnome/256x256/status/battery-low.png
 verylow_icon=/usr/share/icons/gnome/256x256/status/battery-caution.png
@@ -22,8 +23,15 @@ then
   # Grab the actual battery level from acpi.
   batt=`echo $batt | awk '{print $4}' | rev | cut -c 3- | rev`
 
+  # BATTERY SHUTDOWN LEVEL
+  if [[ $batt -le $shutdown_lvl ]];
+  then
+    notify-send -u critical -i $critical_icon "Computer will shutdown in 2 minutes."
+    sleep 120
+    systemctl suspend && /home/jrouly/bin/lock-script
+
   # BATTERY CRITICAL
-  if [[ $batt -le $critical_lvl ]];
+  elif [[ $batt -le $critical_lvl ]];
   then
     notify-send -u critical -i $critical_icon "Critical battery warning: "$batt"% remaining."
     delay=60 # Short delay
