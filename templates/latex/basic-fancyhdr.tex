@@ -1,0 +1,52 @@
+\documentclass[fleqn,letterpaper,10pt]{article}
+
+%\usepackage{fullpage}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+
+\usepackage{amsmath}  % good math formatting
+\usepackage{xfrac}    % provides spaced fractions \sfrac
+\usepackage{amstext}  % good text formatting
+\usepackage{booktabs} % good table formatting
+\usepackage{lmodern}  % better font coverage
+\usepackage{listings} % code listings
+\usepackage{color}    % coloration
+\usepackage{graphicx} % graphics package
+\usepackage{hyperref} % hyperlinks
+\usepackage{array}
+\usepackage{siunitx}  % SI units
+\usepackage{tikz}     % direct graphics drawing
+\usepackage{enumitem} % list environment formatting
+
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\newcommand{\fig}[1]{Figure~\ref{#1}}
+\newcommand{\tab}[1]{Table~\ref{#1}}
+
+%\doublespacing
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+\fancyhead[L]{Jean Michel Rouly}
+\fancyhead[C]{ASSIGNMENT NAME}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{LEFT FOOTER}
+\fancyfoot[C]{CLASS NUMBER}
+\fancyfoot[R]{\thepage~of~\pageref{LastPage}}
+
+%\pagenumbering{gobble}
+
+\begin{document}
+
+
+Body of document.
+
+
+\end{document}
