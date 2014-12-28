@@ -83,7 +83,7 @@ visualizer_sync_interval = "30"
 ##
 #
 #visualizer_type = "wave" (spectrum/wave)
-visualizer_type = "spectrum"
+#visualizer_type = "spectrum"
 #
 #visualizer_look = "◆│"
 #
@@ -367,7 +367,7 @@ follow_now_playing_lyrics = "yes"
 ## playlist, visualizer and media library screens.
 ##
 #screen_switcher_mode = "sequence: 2 -> 3"
-screen_switcher_mode = "sequence: 2 -> 5 -> 10"
+#screen_switcher_mode = "sequence: 2 -> 5 -> 10"
 #
 ##
 ## Default width of locked screen (in %).
@@ -415,11 +415,11 @@ mouse_support = "no"
 #
 #tag_editor_extended_numeration = "no"
 #
-media_library_display_date = "yes"
+#media_library_display_date = "yes"
 #
-media_library_display_empty_tag = "yes"
+#media_library_display_empty_tag = "yes"
 #
-media_library_disable_two_column_mode = "no"
+#media_library_disable_two_column_mode = "no"
 #
 enable_window_title = "yes"
 #
@@ -443,9 +443,9 @@ enable_window_title = "yes"
 ## ncmpcpp's browser screen.
 ##
 #
-allow_physical_files_deletion = "no"
+#allow_physical_files_deletion = "no"
 #
-allow_physical_directories_deletion = "no"
+#allow_physical_directories_deletion = "no"
 #
 #external_editor = ""
 #
