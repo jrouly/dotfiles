@@ -17,6 +17,7 @@ set directory=~/.vim/swap//,/tmp/vim/swap//
 
 " Automatic per-filetype settings
 autocmd FileType tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.scala set filetype=scala
 
 
 " Spellchecking & Autocompletion
