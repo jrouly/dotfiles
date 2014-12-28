@@ -14,26 +14,27 @@ source /usr/share/git/completion/git-completion.bash
 # EXPORT ENVIRONMENT VARIABLES
 export EDITOR=vim
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+export TRJ_HOME=/home/jrouly/documents/gmu/fall2014/cs390/workspace/trajectory
 
 PS1='[\u@\h \W]\$ '
 
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
-PATH=$PATH:.:/home/jrouly/bin
-PATH=$PATH:.:/home/jrouly/.gem/ruby/2.1.0/bin/
+PATH=$PATH:.
+PATH=$PATH:/home/jrouly/bin
+PATH=$PATH:/home/jrouly/.screenlayout
+PATH=$PATH:/home/jrouly/.gem/ruby/2.1.0/bin/
 PATH=$PATH:/home/jrouly/.meteor
-PATH=$PATH:/usr/lib/hadoop/bin
-PATH=$PATH:/usr/lib/mahout/bin
-PATH=$PATH:/usr/lib/hive/bin
-PATH=$PATH:/usr/lib/ec2-api-tools/bin
-PATH=$PATH:/usr/lib/elastic-mapreduce-cli/
-PATH=$PATH:/usr/lib/visualvm/bin/
+
+PATH=$PATH:/home/jrouly/pkgs/spark/bin
+PATH=$PATH:/home/jrouly/pkgs/hadoop/bin
+
+export JAVA_HOME="/usr/lib/jvm/default"
 
 VBOX_USB=usbfs
 
 
 # ALIAS COMMANDS TO EASIER COMMANDS
-alias za='zathura'
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ll -A'
@@ -50,6 +51,7 @@ alias py='python2.7'
 alias slack='chromium --app=http://srct.slack.com'
 alias uptime='uptime -p'
 alias free='free -h'
+alias grep='grep --color=always'
 
 alias synctime='sudo ntpd -qg'
 
@@ -58,6 +60,11 @@ alias reboot='systemctl reboot'
 alias pms='systemctl suspend || /home/jrouly/bin/lock-script'
 
 alias sup='sudo pacman -Syu'
+
+function fname() { find . -iname "*$@*"; }
+function mcd() { mkdir $1 && cd $1; }
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
 
 
 complete -cf man
