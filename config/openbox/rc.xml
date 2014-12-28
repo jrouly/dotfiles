@@ -181,6 +181,16 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <keybind key="C-A-Home">
+      <action name="GoToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="C-A-End">
+      <action name="GoToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -205,14 +215,28 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Home">
+    <keybind key="C-A-H">
       <action name="GoToDesktop">
-        <to>1</to>
+        <to>left</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-End">
+    <keybind key="C-A-L">
       <action name="GoToDesktop">
-        <to>6</to>
+        <to>right</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-K">
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-J">
+      <action name="GoToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
     <keybind key="C-S-A-Home">
@@ -389,7 +413,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>firefox</command>
+        <command>chromium</command>
       </action>
     </keybind>
     <keybind key="W-c">
@@ -412,7 +436,7 @@
         <command>/home/jrouly/bin/wallpaper-single</command>
       </action>
     </keybind>
-    <keybind key="C-A-l">
+    <keybind key="W-l">
       <action name="Execute">
         <command>/home/jrouly/bin/lock-script</command>
       </action>
@@ -433,14 +457,24 @@
       </action>
     </keybind>
     <!-- keybindings for function hotkeys -->
+    <keybind key="S-XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>xbacklight -inc 50</command>
+      </action>
+    </keybind>
+    <keybind key="S-XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -dec 50</command>
+      </action>
+    </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>xbacklight -inc 30</command>
+        <command>xbacklight -inc 10</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>xbacklight -dec 30</command>
+        <command>xbacklight -dec 10</command>
       </action>
     </keybind>
     <keybind key="Print">
@@ -912,6 +946,10 @@
       <decor>no</decor>
     </application>
     <application name="ncmpcpp">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
+    <application name="spotify">
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
