@@ -1,16 +1,28 @@
 " Enable Pathogen
 
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
+
 
 " General Vim behavior
 set nocompatible   " stop vim from emulating vi
 filetype plugin on " turn on filetype recognition
 syntax on          " turn on syntax highlighting
-autocmd FileType tex setlocal spell spelllang=en_us
 set mouse=a        " enable mouse interactivity
 set ttyfast        " scroll quickly
 set backspace=2    " use backspace everywhere
 set fileformats=unix,dos,mac " try to recognize line endings
+set directory=~/.vim/swap//,/tmp/vim/swap//
+
+
+" Automatic per-filetype settings
+autocmd FileType tex setlocal spell spelllang=en_us
+
+
+" Spellchecking & Autocompletion
+set dictionary+=/usr/share/dict/words
+set complete+=k
+nnoremap <Leader>s :set dictionary=/dev/null<CR>
 
 
 " Search behaviour
@@ -44,8 +56,8 @@ highlight CursorColumn ctermbg=Blue
 set t_Co=256
 let g:solarized_visibility="high" " high visibility for line endings
 let g:solarized_termcolors=256    " 256 colors
-colorscheme solarized " for solarized
 set background=light   " for solarized
+colorscheme solarized " for solarized
 
 
 " Text formatting
@@ -80,3 +92,6 @@ au BufWinEnter * silent! loadview
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 nnoremap <space> za
 
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
