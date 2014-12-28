@@ -32,11 +32,10 @@ for module in $input; do
         for f in $HOME/.ssh/*; do file $f | grep "broken"; done
 
         # Install bash, git, vim.
-        mkdir -pv "$HOME/.vim"
         ln -insv "$dotfiles/bash/bashrc"            "$HOME/.bashrc"
         ln -insv "$dotfiles/git/gitconfig"          "$HOME/.gitconfig"
         ln -insv "$dotfiles/vim/vimrc"              "$HOME/.vimrc"
-        ln -insv "$dotfiles/vim/bundle"             "$HOME/.vim/bundle"
+        ln -insv "$dotfiles/vim/vim"                "$HOME/.vim"
         ln -insv "$dotfiles/templates"              "$HOME/.templates"
         for f in $HOME/.*; do file $f | grep "broken"; done
         ;;
