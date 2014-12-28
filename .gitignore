@@ -1,3 +1,6 @@
 *~
 *.swp
 bin/enkidu-jrouly.pl
+vim/vim/bundle/*
+vim/vim/spell/*
+vim/vim/swap/*
