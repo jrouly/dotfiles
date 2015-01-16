@@ -46,6 +46,7 @@ for module in $input; do
         mkdir -pv "$HOME/.config"
         ln -insv "$dotfiles/config/conky"           "$HOME/.config/conky"
         ln -insv "$dotfiles/config/openbox"         "$HOME/.config/openbox"
+        ln -insv "$dotfiles/config/terminator"      "$HOME/.config/terminator"
         ln -insv "$dotfiles/config/tint2"           "$HOME/.config/tint2"
         ln -insv "$dotfiles/config/user-dirs.dirs"  "$HOME/.config/user-dirs.dirs"
         for f in $HOME/.config/*; do file $f | grep "broken"; done

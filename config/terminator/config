@@ -1,0 +1,63 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_hide_sizetext = True
+  handle_size = 1
+  borderless = True
+[keybindings]
+  cycle_prev = None
+  next_tab = <Primary>Tab
+  close_window = None
+  group_tab = None
+  resize_left = None
+  rotate_ccw = None
+  reset_clear = None
+  go_right = None
+  new_tab = <Primary>t
+  resize_right = None
+  resize_down = None
+  toggle_zoom = None
+  scaled_zoom = None
+  zoom_in = <Primary>equal
+  group_all = None
+  move_tab_right = None
+  prev_tab = <Primary><Shift>Tab
+  split_vert = None
+  ungroup_all = None
+  ungroup_tab = None
+  cycle_next = None
+  go_prev = None
+  close_term = None
+  new_terminator = None
+  go_next = None
+  go_left = None
+  hide_window = None
+  reset = None
+  search = None
+  go_up = None
+  resize_up = None
+  rotate_cw = None
+  split_horiz = None
+  go_down = None
+  new_window = None
+  move_tab_left = None
+  toggle_scrollbar = None
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    background_image = None
+    use_system_font = False
+    scroll_on_output = False
+    show_titlebar = False
+    font = Meslo LG L 9
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 650, 400
+[plugins]
