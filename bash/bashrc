@@ -14,7 +14,7 @@ source /usr/share/git/completion/git-completion.bash
 # EXPORT ENVIRONMENT VARIABLES
 export EDITOR=vim
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
-export TRJ_HOME=/home/jrouly/documents/gmu/fall2014/cs390/workspace/trajectory
+export TRJ_HOME=/home/jrouly/code/trajectory
 
 PS1='[\u@\h \W]\$ '
 
