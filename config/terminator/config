@@ -1,27 +1,23 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   title_hide_sizetext = True
-  handle_size = 1
+  handle_size = 2
   borderless = True
 [keybindings]
   cycle_prev = None
-  next_tab = <Primary>Tab
   close_window = None
   group_tab = None
-  resize_left = None
+  resize_left = <Shift><Alt>Left
   rotate_ccw = None
-  reset_clear = None
-  go_right = None
-  new_tab = <Primary>t
-  resize_right = None
-  resize_down = None
+  move_tab_left = None
+  resize_right = <Shift><Alt>Right
+  group_all = None
   toggle_zoom = None
   scaled_zoom = None
   zoom_in = <Primary>equal
-  group_all = None
-  move_tab_right = None
+  resize_down = <Shift><Alt>Down
   prev_tab = <Primary><Shift>Tab
-  split_vert = None
+  split_vert = <Primary>Right
   ungroup_all = None
   ungroup_tab = None
   cycle_next = None
@@ -29,54 +25,43 @@
   close_term = None
   new_terminator = None
   go_next = None
-  go_left = None
+  new_tab = <Primary>t
   hide_window = None
   reset = None
   search = None
-  go_up = None
-  resize_up = None
   rotate_cw = None
-  split_horiz = None
-  go_down = None
+  resize_up = <Shift><Alt>Up
+  next_tab = <Primary>Tab
+  split_horiz = <Primary>Down
+  move_tab_right = None
   new_window = None
-  move_tab_left = None
+  reset_clear = None
   toggle_scrollbar = None
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    background_image = None
-    use_system_font = False
-    scroll_on_output = False
-    show_titlebar = False
-    font = Meslo LG L 9
-    scrollback_infinite = True
-
-  [[solarized-dark]]
-    scrollbar_position = hidden
-    background_image = None
-    use_system_font = False
-    scroll_on_output = False
-    show_titlebar = False
-    font = Meslo LG L 9
-    scrollback_infinite = True
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    foreground_color = "#eee8d5"
-    background_color = "#002b36"
+    background_image = None
+    use_system_font = False
     cursor_color = "#eee8d5"
-
+    foreground_color = "#eee8d5"
+    scroll_on_output = False
+    show_titlebar = False
+    font = Meslo LG L 9
+    background_color = "#002b36"
+    scrollback_infinite = True
   [[solarized-light]]
     scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     background_image = None
     use_system_font = False
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
     scroll_on_output = False
     show_titlebar = False
     font = Meslo LG L 9
-    scrollback_infinite = True
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     background_color = "#eee8d5"
-    foreground_color = "#002b36"
-    cursor_color = "#002b36"
-
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
