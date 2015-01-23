@@ -418,7 +418,7 @@
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <command>terminator -e alsamixer</command>
+        <command>urxvt -e alsamixer</command>
       </action>
     </keybind>
     <keybind key="W-n">
@@ -931,6 +931,7 @@
 
   # end of the example
 -->
+
     <application name="urxvt">
       <decor>no</decor>
     </application>
