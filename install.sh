@@ -17,15 +17,15 @@ read input
 input=$( echo $input | tr "[ ;,]" "\n")
 
 for module in $input; do
-  
+
   case $module in
     e)  echo "Installing: bash, bin, git, vim, ssh..."
-        
+
         # Install binaries.
         mkdir -pv "$HOME/bin"
         ln -insv $dotfiles/bin/* $HOME/bin
         for f in $HOME/bin/*; do file $f | grep "broken"; done
-        
+
         # Install ssh.
         mkdir -pv "$HOME/.ssh"
         ln -insv "$dotfiles/ssh/config"             "$HOME/.ssh/config"
@@ -42,7 +42,7 @@ for module in $input; do
         ;;
 
     x)  echo "Installing: conky, openbox, tint2, user-dirs.dirs, themes, X..."
-        
+
         # Install conky, openbox, tint2, user-dirs.dirs.
         mkdir -pv "$HOME/.config"
         ln -insv "$dotfiles/config/conky"           "$HOME/.config/conky"
@@ -60,7 +60,7 @@ for module in $input; do
         ;;
 
     m)  echo "Installing: ncmpcpp, mpd..."
-        
+
         # Install ncmpcpp, mpd
         ln -insv "$dotfiles/ncmpcpp"                "$HOME/.ncmpcpp"
         ln -insv "$dotfiles/mpd/mpdconf"            "$HOME/.mpdconf"
@@ -68,7 +68,7 @@ for module in $input; do
         ;;
 
     a)  echo "Installing: geany, transmission, zathura..."
-        
+
         # Install geany, transmission, zathura
         mkdir -pv "$HOME/.config"
         ln -insv "$dotfiles/config/geany"           "$HOME/.config/geany"
@@ -80,6 +80,6 @@ for module in $input; do
     *)  echo "Malformed input: "$module
         ;;
   esac
-  
+
 done
 
