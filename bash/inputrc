@@ -1,7 +1,1 @@
 set show-mode-in-prompt on
-
-$if mode=vi
-
-"\C-l":'clear\n'
-
-$endif
