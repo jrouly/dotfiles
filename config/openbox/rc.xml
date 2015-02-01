@@ -931,7 +931,6 @@
 
   # end of the example
 -->
-
     <application name="urxvt">
       <decor>no</decor>
     </application>
