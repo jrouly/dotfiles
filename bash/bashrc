@@ -69,3 +69,7 @@ function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
 
 complete -cf man
+
+
+# Enable vi mode.
+set -o vi
