@@ -33,7 +33,6 @@ for module in $input; do
 
         # Install bash, git, vim.
         ln -insv "$dotfiles/bash/bashrc"            "$HOME/.bashrc"
-        ln -insv "$dotfiles/bash/inputrc"            "$HOME/.inputrc"
         ln -insv "$dotfiles/git/gitconfig"          "$HOME/.gitconfig"
         ln -insv "$dotfiles/vim/vimrc"              "$HOME/.vimrc"
         ln -insv "$dotfiles/vim/vim"                "$HOME/.vim"
