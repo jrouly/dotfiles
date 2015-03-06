@@ -393,7 +393,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>terminator</command>
+        <command>urxvtc</command>
       </action>
     </keybind>
     <keybind key="W-o">
@@ -423,7 +423,7 @@
     </keybind>
     <keybind key="W-n">
       <action name="Execute">
-        <command>terminator -c ncmpcpp -e ncmpcpp</command>
+        <command>urxvtc -name ncmpcpp -e ncmpcpp</command>
       </action>
     </keybind>
     <keybind key="W-Escape">
