@@ -57,8 +57,8 @@ highlight CursorColumn ctermbg=Blue
 " Solarized settings
 set t_Co=256
 let g:solarized_visibility="high" " high visibility for line endings
-let g:solarized_termcolors=256    " 256 colors
-set background=light   " for solarized
+" let g:solarized_termcolors=256    " 256 colors
+set background=dark   " for solarized
 colorscheme solarized " for solarized
 
 
