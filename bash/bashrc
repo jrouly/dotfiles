@@ -24,7 +24,7 @@ PS1='[\u@\h \W]\$ '
 PATH=$PATH:.
 PATH=$PATH:/home/jrouly/bin
 PATH=$PATH:/home/jrouly/.screenlayout
-PATH=$PATH:/home/jrouly/.gem/ruby/2.1.0/bin/
+PATH=$PATH:/home/jrouly/.gem/ruby/2.2.0/bin/
 PATH=$PATH:/home/jrouly/.meteor
 
 PATH=$PATH:/home/jrouly/pkgs/spark/bin
