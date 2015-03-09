@@ -4,7 +4,8 @@
 urxvtd &                      ## terminal daemon (increases responsiveness)
 clipit &                      ## clipboard manager
 xcompmgr -n &                 ## transparency manager
-tint2 &                       ## panel
+tint2 -c ~/.config/tint2/openbox_config.tint2rc & ## main panel
+tint2 -c ~/.config/tint2/left_panel.tint2rc &     ## launcher panel
 dbus-launch pcmanfm -d &      ## pcmanfm daemon (increases responsiveness)
 mpd &                         ## music player daemon
 amixer -q set Master mute &   ## start as muted

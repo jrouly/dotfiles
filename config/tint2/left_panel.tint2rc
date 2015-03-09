@@ -84,7 +84,7 @@ task_iconified_font_color = #ABABAB 100
 font_shadow = 0
 
 # System Tray
-systray = 0
+systray = 1
 systray_padding = 5 2 5
 systray_sort = ascending
 systray_background_id = 0
