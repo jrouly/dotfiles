@@ -36,13 +36,13 @@ border_color = #000000 100
 # Panel
 panel_monitor = all
 panel_position = top left vertical
-panel_size = 100% 20
+panel_size = 100% 50
 panel_margin = 0 0
 panel_padding = 0 0 0
 panel_dock = 0
 wm_menu = 1
 panel_layer = top
-panel_background_id = 1
+panel_background_id = 0
 
 # Panel Autohide
 autohide = 1
@@ -53,7 +53,7 @@ strut_policy = none
 
 # Taskbar
 taskbar_mode = single_desktop
-taskbar_padding = 0 0 0
+taskbar_padding = 20 0 0
 taskbar_background_id = 0
 #taskbar_active_background_id = 0
 
@@ -84,7 +84,7 @@ task_iconified_font_color = #ABABAB 100
 font_shadow = 0
 
 # System Tray
-systray = 1
+systray = 0
 systray_padding = 5 2 5
 systray_sort = ascending
 systray_background_id = 0

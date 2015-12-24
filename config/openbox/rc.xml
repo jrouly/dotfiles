@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Numix-1.9</name>
+    <name>Numix-ArchBlue</name>
     <titleLayout>LMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -156,7 +156,7 @@
      cases. -->
   <margins>
     <top>20</top>
-    <bottom>20</bottom>
+    <bottom>18</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -416,9 +416,14 @@
         <command>galculator</command>
       </action>
     </keybind>
+    <keybind key="W-S-c">
+      <action name="Execute">
+        <command>urxvtc -e bc</command>
+      </action>
+    </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <command>urxvt -e alsamixer</command>
+        <command>urxvtc -e alsamixer</command>
       </action>
     </keybind>
     <keybind key="W-n">
@@ -437,8 +442,8 @@
       </action>
     </keybind>
     <keybind key="C-A-Delete">
-      <action name="Exit">
-        <prompt>yes</prompt>
+      <action name="Execute">
+        <command>oblogout</command>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -934,27 +939,15 @@
     <application name="urxvt">
       <decor>no</decor>
     </application>
-    <application name="roxterm">
-      <decor>no</decor>
-    </application>
-    <application class="MPlayer">
-      <decor>no</decor>
-    </application>
     <application name="ncmpcpp">
       <decor>no</decor>
       <maximized>true</maximized>
     </application>
-    <application name="spotify">
+    <!--
+    <application class="MPlayer">
       <decor>no</decor>
-      <maximized>true</maximized>
-    </application>
-    <application name="Buddy List">
-      <maximized>vertical</maximized>
     </application>
     <application name="galculator">
-      <decor>no</decor>
-    </application>
-    <application class="Firefox">
       <decor>no</decor>
     </application>
     <application class="Pcmanfm">
@@ -962,6 +955,17 @@
     </application>
     <application class="Zathura">
       <decor>no</decor>
+    </application>
+-->
+    <application name="oblogout">
+      <position force="yes">
+        <x>right</x>
+        <y>0</y>
+      </position>
+      <size>
+        <width>1366</width>
+        <height>768</height>
+      </size>
     </application>
   </applications>
 </openbox_config>

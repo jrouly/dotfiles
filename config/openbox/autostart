@@ -2,20 +2,20 @@
 /home/jrouly/bin/battery-monitor.sh & ## battery monitoring script
 
 urxvtd &                      ## terminal daemon (increases responsiveness)
-clipit &                      ## clipboard manager
+## clipit &                      ## clipboard manager
 xcompmgr -n &                 ## transparency manager
 tint2 -c ~/.config/tint2/openbox_config.tint2rc & ## main panel
-tint2 -c ~/.config/tint2/left_panel.tint2rc &     ## launcher panel
+## tint2 -c ~/.config/tint2/left_panel.tint2rc &     ## launcher panel
 dbus-launch pcmanfm -d &      ## pcmanfm daemon (increases responsiveness)
 mpd &                         ## music player daemon
 amixer -q set Master mute &   ## start as muted
 conky -d -c ~/.config/conky/openbox.conkyrc &    ## system monitor
 xbacklight -set 30 -time 0 &  ## turn down initial screen brightness
-dropboxd &                    ## dropbox daemon
+dropbox &                    ## dropbox daemon
 owncloud &                    ## ownCloud-client 
-
-notification-daemon &         ## notification daemon
 
 xset -dpms & xset s off &     ## disable screen blanking
 
 redshift -l 38.8308:77.3075 & ## screen color warmth daemon
+
+nm-applet                     ## network manager applet

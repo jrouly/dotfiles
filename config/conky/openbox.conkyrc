@@ -1,5 +1,3 @@
-# ~/.conkyrc
-#
 double_buffer yes
 background yes
 
@@ -17,7 +15,7 @@ own_window_transparent no
 own_window_colour 2d2d2d
 own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
 
-minimum_size 1360 10
+minimum_size 1361 10
 draw_shades no
 draw_outline no
 draw_borders no
@@ -28,7 +26,7 @@ default_shade_color lightgrey
 default_outline_color white
 alignment bottom_left
 gap_x 0
-gap_y 5 #35
+gap_y 4 #35
 no_buffers yes
 uppercase no
 
