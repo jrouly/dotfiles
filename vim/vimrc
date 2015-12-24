@@ -42,7 +42,7 @@ set number         " show line numbers
 set showcmd        " always show current command
 set showmode       " always show current mode
 set showmatch      " show matching brackets & parentheses
-set list listchars=tab:▸·,trail:·
+" set list listchars=tab:▸·,trail:·
 set title          " always show title
 set ruler          " always show information at the bottom
 

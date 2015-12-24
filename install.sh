@@ -36,7 +36,7 @@ for module in $input; do
         ln -insv "$dotfiles/git/gitconfig"          "$HOME/.gitconfig"
         ln -insv "$dotfiles/vim/vimrc"              "$HOME/.vimrc"
         ln -insv "$dotfiles/vim/vim"                "$HOME/.vim"
-        mkdir "$HOME/.vim/bundle"
+        mkdir "$HOME/.vim/bundle" "$HOME/.vim/swap"
         $HOME/.vim/update-bundles
         ln -insv "$dotfiles/templates"              "$HOME/.templates"
         for f in $HOME/.*; do file $f | grep "broken"; done

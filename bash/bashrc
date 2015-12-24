@@ -8,7 +8,7 @@
 source /usr/share/git/completion/git-completion.bash
 
 # set up amazon aws credentials for ec2 api tools
-. /home/jrouly/.ec2/config
+# . /home/jrouly/.ec2/config
 
 shopt -s checkwinsize
 
