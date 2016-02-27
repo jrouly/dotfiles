@@ -71,30 +71,17 @@
 
 
 
-! XTerm settings -----------------------------------------------------------
-Xft.dpi:        96
-Xft.antialias:  1
-Xft.hinting:    1
-Xft.hintstyle:  hintfull
-Xft.rgba:       rgb
-xterm*faceName: DejaVu Sans Mono
-xterm*faceSize: 8
-
-
 ! RXVT-Unicode settings -----------------------------------------------------------
 
 ! Font settings
-URxvt*font:     xft:Meslo LG L:size=9
-URxvt*letterSpace: -2
+URxvt.font:             xft:Source Code Pro:size=10
+URxvt.boldFont:         xft:Source Code Pro:bold:size=10
+URxvt.letterSpace:      0
 
 ! Openbox settings
 URxvt*termName:         rxvt
 URxvt.iconFile:         /usr/share/icons/Adwaita/scalable/apps/utilities-terminal-symbolic.svg
-URxvt.geometry:         90x20
-
-! ! Color settings
-! URxvt.foreground:       #babdb6
-! URxvt.background:       #000000
+URxvt.geometry:         85x25
 
 ! Scrollbar settings
 URxvt.scrollBar:        false
@@ -107,27 +94,38 @@ URxvt.scrollTtyKeypress: true
 URxvt.secondaryScreen:  1
 URxvt.secondaryScroll:  0
 
-! disable annoying utf-8 keybindings
+! Installed Perl extensions
+URxvt.perl-ext-common:  default,clipboard,tabbedex,resize-font,fullscreen
+
+! Clipboard
 URxvt.iso14755:         false
 URxvt.iso14755_52:      false
+URxvt.keysym.Shift-Control-C:  perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:  perl:clipboard:paste
+URxvt.clipboard.copycmd:       xsel -ib
+URxvt.clipboard.pastecmd:      xsel -ob
 
-! Installed Perl extensions
-URxvt.perl-ext-common:  default,matcher,tabbedex,font-size
-
-! URL matcher settings
-URxvt.url-launcher:     /usr/bin/chromium
-URxvt.colorUL:          #4682B4
-URxvt.matcher.button:   1
 
 ! tabbedex settings
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:    3
 URxvt.tabbed.tab-bg:    8
-URxvt.keysym.C-t:       perl:tabbedex:new_tab
+URxvt.tabbed.no-tabbedex-keys:    true
+URxvt.keysym.Control-t:           perl:tabbedex:new_tab
+URxvt.keysym.Control-Tab:         perl:tabbedex:next_tab
+URxvt.keysym.Control-Shift-Tab:   perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-Left:  perl:tabbedex:move_tab_left
+URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
+URxvt.keysym.Control-Shift-R:     perl:tabbedex:rename_tab
 
-! font-size settings
-URxvt.keysym.C-equal:   perl:font-size:increase
-URxvt.keysym.C-minus:   perl:font-size:decrease
-URxvt.keysym.C-0:       perl:font-size:reset
-URxvt.font-size.step:   2
+
+! resize-font settings
+URxvt.resize-font.smaller:     C-minus
+URxvt.resize-font.bigger:      C-plus
+URxvt.resize-font.reset:       C-equal
+URxvt.resize-font.show:        C-question
+
+
+! Fullscreen settings
+URxvt.keysym.F11:       perl:fullscreen:switch

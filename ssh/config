@@ -1,3 +1,5 @@
+IdentitiesOnly no
+
 Host zeus
   User jrouly
   HostName zeus.vse.gmu.edu
@@ -9,3 +11,6 @@ Host rouly.net
   HostName rouly.net
   GSSAPIAuthentication no
 
+Host rpi
+  User jrouly
+  HostName 192.168.1.92

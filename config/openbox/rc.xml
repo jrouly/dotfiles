@@ -30,7 +30,7 @@
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Primary</monitor>
+    <monitor>Mouse</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
@@ -57,16 +57,16 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Sans</name>
+      <name>Source Sans Pro</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Sans</name>
+      <name>Source Sans Pro</name>
       <size>8</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -75,25 +75,25 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
+      <name>Source Sans Pro</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
+      <name>Source Sans Pro</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Sans</name>
+      <name>Source Sans Pro</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -102,7 +102,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Sans</name>
+      <name>Source Sans Pro</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -156,7 +156,7 @@
      cases. -->
   <margins>
     <top>20</top>
-    <bottom>18</bottom>
+    <bottom>22</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -376,11 +376,6 @@
         <command>gmrun</command>
       </action>
     </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>geany</command>
-      </action>
-    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <command>pcmanfm</command>
@@ -401,11 +396,6 @@
         <command>libreoffice</command>
       </action>
     </keybind>
-    <keybind key="W-p">
-      <action name="Execute">
-        <command>pithos</command>
-      </action>
-    </keybind>
     <keybind key="W-w">
       <action name="Execute">
         <command>chromium</command>
@@ -414,6 +404,11 @@
     <keybind key="W-c">
       <action name="Execute">
         <command>galculator</command>
+      </action>
+    </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>urxvtc -e vim</command>
       </action>
     </keybind>
     <keybind key="W-S-c">
@@ -438,7 +433,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>/home/jrouly/bin/lock-script</command>
+        <command>/usr/bin/slock</command>
       </action>
     </keybind>
     <keybind key="C-A-Delete">
@@ -456,40 +451,14 @@
         <menu>OB-exit-menu</menu>
       </action>
     </keybind>
-    <!-- keybindings for function hotkeys -->
-    <keybind key="S-XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>xbacklight -inc 50</command>
-      </action>
-    </keybind>
-    <keybind key="S-XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>xbacklight -dec 50</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>xbacklight -inc 10</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>xbacklight -dec 10</command>
-      </action>
-    </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -e 'mv $f ~/images/shots/'</command>
+        <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -e 'mv $f /data/images/screenshots/'</command>
       </action>
     </keybind>
     <keybind key="S-Print">
       <action name="Execute">
-        <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -s -e 'mv $f ~/images/shots/'</command>
-      </action>
-    </keybind>
-    <keybind key="XF86TouchpadToggle">
-      <action name="Execute">
-        <command>/home/jrouly/bin/trackpad-toggle</command>
+        <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -s -e 'mv $f /data/images/screenshots/'</command>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
@@ -959,12 +928,12 @@
 -->
     <application name="oblogout">
       <position force="yes">
-        <x>right</x>
+        <x>left</x>
         <y>0</y>
       </position>
       <size>
-        <width>1366</width>
-        <height>768</height>
+        <width>1920</width>
+        <height>1080</height>
       </size>
     </application>
   </applications>

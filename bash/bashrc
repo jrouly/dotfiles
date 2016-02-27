@@ -27,8 +27,7 @@ PATH=$PATH:/home/jrouly/.screenlayout
 PATH=$PATH:/home/jrouly/.gem/ruby/2.2.0/bin/
 PATH=$PATH:/home/jrouly/.meteor
 
-PATH=$PATH:/home/jrouly/pkgs/spark/bin
-PATH=$PATH:/home/jrouly/pkgs/hadoop/bin
+PATH=$PATH:/data/packages/
 
 export JAVA_HOME="/usr/lib/jvm/default"
 
@@ -61,6 +60,8 @@ alias reboot='systemctl reboot'
 alias pms='systemctl suspend || /home/jrouly/bin/lock-script'
 
 alias sup='sudo pacman -Syu'
+
+alias ipconfig='nmcli dev show enp0s25'
 
 function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
