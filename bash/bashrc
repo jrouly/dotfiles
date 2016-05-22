@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Initialize gpg-agent with ssh support.
+eval "$(gpg-agent --daemon --enable-ssh-support 2> /dev/null)"
+export SSH_AUTH_SOCK=/home/jrouly/.gnupg/S.gpg-agent.ssh
+
 source /usr/share/git/completion/git-completion.bash
 
 # set up amazon aws credentials for ec2 api tools
@@ -35,7 +39,7 @@ VBOX_USB=usbfs
 
 
 # ALIAS COMMANDS TO EASIER COMMANDS
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -N'
 alias ll='ls -lh'
 alias la='ll -A'
 alias lr='ll -R'
