@@ -6,8 +6,8 @@
 [[ $- != *i* ]] && return
 
 # Initialize gpg-agent with ssh support.
-eval "$(gpg-agent --daemon --enable-ssh-support 2> /dev/null)"
-export SSH_AUTH_SOCK=/home/jrouly/.gnupg/S.gpg-agent.ssh
+# eval "$(gpg-agent --daemon --enable-ssh-support 2> /dev/null)"
+# export SSH_AUTH_SOCK=/home/jrouly/.gnupg/S.gpg-agent.ssh
 
 source /usr/share/git/completion/git-completion.bash
 
@@ -52,7 +52,6 @@ alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias vi='vim'
 alias py='python2.7'
-alias slack='chromium --app=http://srct.slack.com'
 alias uptime='uptime -p'
 alias free='free -h'
 alias grep='grep --color=always'

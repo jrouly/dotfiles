@@ -461,6 +461,7 @@
         <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -s -e 'mv $f /data/images/screenshots/'</command>
       </action>
     </keybind>
+<!--
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>amixer -q set Master 5+ unmute</command>
@@ -476,6 +477,7 @@
         <command>amixer -q set Master toggle</command>
       </action>
     </keybind>
+-->
     <keybind key="XF86AudioPlay">
       <action name="Execute">
         <command>mpc toggle</command>
@@ -491,6 +493,7 @@
         <command>mpc next</command>
       </action>
     </keybind>
+-->
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

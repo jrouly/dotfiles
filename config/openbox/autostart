@@ -1,4 +1,6 @@
-/home/jrouly/bin/wallpaper &  ## wallpaper gallery script
+# /home/jrouly/bin/wallpaper &  ## wallpaper gallery script
+
+feh --bg-fill --no-xinerama '/data/images/wallpaper/dual/3840x1080/wallhaven-161924.jpg' &
 
 urxvtd &                      ## terminal daemon (increases responsiveness)
 xcompmgr -n &                 ## transparency manager
@@ -11,6 +13,8 @@ conky -d -c ~/.config/conky/right.rc &    ## right screen system monitor
 dropbox &                    ## dropbox daemon
 
 xset -dpms & xset s off &     ## disable screen blanking
+
+systemctl --user restart gpg-agent
 
 # redshift -l 38.8308:77.3075 & ## screen color warmth daemon
 # nm-applet                     ## network manager applet
