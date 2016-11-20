@@ -31,6 +31,11 @@ for module in $input; do
         ln -insv "$dotfiles/ssh/config"             "$HOME/.ssh/config"
         for f in $HOME/.ssh/*; do file $f | grep "broken"; done
 
+        # Install gpg-agent config.
+        mkdir -pv "$HOME/.config/systemd/user"
+        ln -insv "$dotfiles/config/systemd/user/gpg-agent.service" \
+           "$HOME/.config/systemd/user/gpg-agent.service"
+
         # Install bash, git, vim.
         ln -insv "$dotfiles/bash/bashrc"            "$HOME/.bashrc"
         ln -insv "$dotfiles/git/gitconfig"          "$HOME/.gitconfig"
