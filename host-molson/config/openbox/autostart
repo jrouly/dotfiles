@@ -1,0 +1,11 @@
+~/bin/wallpaper &  ## wallpaper gallery script
+
+conky -d -c ~/.config/conky/time.conf &
+conky -d -c ~/.config/conky/disk.conf &
+
+tint2 -c ~/.config/tint2/tint2rc &
+
+urxvtd &
+dbus-launch pcmanfm -d &
+xset -dpms & xset s off &
+systemctl --user restart gpg-agent
