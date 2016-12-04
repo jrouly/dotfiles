@@ -2,7 +2,7 @@
 
 urxvtd &                      ## terminal daemon (increases responsiveness)
 
-tint2 -c ~/.config/tint2/tint2rc &
+tint2 -c .config/tint2/tint2rc.conf &
 
 dbus-launch pcmanfm -d &      ## pcmanfm daemon (increases responsiveness)
 
