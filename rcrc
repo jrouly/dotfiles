@@ -1,3 +1,4 @@
 DOTFILES_DIRS="$HOME/.dotfiles"
 EXCLUDES="README.md"
 TAGS="bin bash git ssh vim"
+UNDOTTED="bin"
