@@ -7,7 +7,7 @@ For example, if you want only my vim setup:
 
 ```
 $ git clone https://github.com/jrouly/dotfiles .jrouly-dotfiles
-$ rcup -d .jrouly-dotfiles -x README.md -t vim
+$ rcup -d .jrouly-dotfiles -t vim
 ```
 
 These options could be made the default in your own `~/.rcrc`.
