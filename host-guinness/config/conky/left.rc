@@ -1,0 +1,72 @@
+-- vim: tw=0 syntax=lua
+
+conky.config = {
+  -- positioning
+  alignment = 'bottom_left',
+  background = true,
+  gap_x = -1916,
+  gap_y = 4,
+  minimum_height = 5,
+  minimum_width = 1911,
+
+  -- font
+  use_xft = true,
+  font = 'Source Sans Pro:size=8',
+
+  -- update
+  update_interval = 1.0,
+  double_buffer = true,
+
+  -- window
+  own_window = true,
+  own_window_class = 'Conky',
+  own_window_type = 'override',
+  own_window_transparent = false,
+  own_window_colour = '2d2d2d',
+
+  -- drawing
+  border_width = 0,
+  draw_shades = false,
+  draw_outline = false,
+  draw_borders = false,
+  draw_graph_borders = true,
+  stippled_borders = 0,
+
+  -- colors
+  default_color = 'white',
+  default_outline_color = 'white',
+  default_shade_color = 'white',
+
+  -- sampling
+  cpu_avg_samples = 2,
+  net_avg_samples = 2,
+
+  -- text output
+  out_to_console = false,
+  out_to_stderr = false,
+
+  -- miscellaneous
+  no_buffers = true,
+  extra_newline = false,
+  uppercase = false,
+  use_spacer = 'none',
+  show_graph_scale = false,
+  show_graph_range = false
+}
+
+conky.text = [[
+${color grey}${uid_name 1000}@$nodename ${color d64937} •  \
+$color$kernel ${color d64937} •  \
+${color grey}Uptime:$color $uptime_short ${color d64937} •  \
+${color grey}CPU:$color ${cpu 0}% $acpitemp° ${color d64937} •  \
+${color grey}RAM:$color $mem ${color d64937} •  \
+${color grey}Swap:$color $swap ${color d64937} •  \
+${color grey}Processes:$color $processes ${color d64937} •  \
+${color grey}Packages:$color ${execi 60 sh /home/jrouly/.config/conky/scripts/packages.sh} ${color d64937} ${color d64937} •  \
+${color grey}Gmail:$color ${execi 10 python /home/jrouly/.config/conky/scripts/gmail.py /home/jrouly/.config/conky/scripts/gmail.credentials unread} \
+${if_mpd_playing}$alignr\
+${color grey}MPD:$color $mpd_status ${color d64937} •  \
+$color$mpd_elapsed / $mpd_length ${color d64937} •  \
+$color$mpd_artist ${color grey}/$color $mpd_title ${color grey}/$color $mpd_album\
+$endif
+]]

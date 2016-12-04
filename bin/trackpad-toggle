@@ -1,4 +1,0 @@
-#!/bin/bash
-
-synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')
-notify-send "Trackpad status $(synclient -l | grep -c 'TouchpadOff.*=.*0')."

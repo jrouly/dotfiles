@@ -1,4 +1,0 @@
-[build-menu]
-EX_00_LB=V_iew PDF File
-EX_00_CM=zathura "%e.pdf"
-EX_00_WD=

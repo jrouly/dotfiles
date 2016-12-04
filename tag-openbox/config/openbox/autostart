@@ -1,0 +1,18 @@
+~/bin/wallpaper &  ## wallpaper gallery script
+
+urxvtd &                      ## terminal daemon (increases responsiveness)
+
+tint2 -c ~/.config/tint2/tint2rc &
+
+dbus-launch pcmanfm -d &      ## pcmanfm daemon (increases responsiveness)
+
+volumeicon &
+
+conky -d -c ~/.config/conky/left.rc &     ## left screen system monitor
+conky -d -c ~/.config/conky/right.rc &    ## right screen system monitor
+
+dropbox &                    ## dropbox daemon
+
+xset -dpms & xset s off &     ## disable screen blanking
+
+systemctl --user restart gpg-agent

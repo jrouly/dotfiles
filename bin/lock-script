@@ -1,7 +1,0 @@
-#!/bin/bash
-
-( slock && xset -dpms && xset s off ) &
-sleep 1
-xset +dpms
-xset dpms 0 0 2
-xset dpms force off
