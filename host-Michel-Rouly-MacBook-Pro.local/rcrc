@@ -1,0 +1,5 @@
+DOTFILES_DIRS="$HOME/.dotfiles"
+EXCLUDES="README.md"
+TAGS="git gnupg pub-keys vim"
+UNDOTTED="bin keys"
+COPY_ALWAYS=false
