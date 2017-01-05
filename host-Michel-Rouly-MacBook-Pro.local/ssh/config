@@ -1,0 +1,31 @@
+ForwardAgent yes
+Host jump
+   Hostname jump.audax.in
+   DynamicForward 3128
+   LocalForward 3199 partner-proxy.infra.audax.in:3128
+   User     mrouly
+   ServerAliveInterval 60
+   IdentityFile ~/.ssh/id_rsa
+Host old+*
+    ProxyCommand nc -x localhost:3128 $(echo %h | sed 's/^.*+//;') %p
+Host jump-prod
+   Hostname jump.werally.in
+   DynamicForward 3129
+   User     mrouly
+   ServerAliveInterval 60
+   IdentityFile ~/.ssh/id_rsa
+Host prod+*
+    ProxyCommand nc -x localhost:3129 $(echo %h | sed 's/^.*+//;') %p
+Host jump-dev
+   Hostname jump-dev.werally.in
+   DynamicForward 3130
+   User     mrouly
+   ServerAliveInterval 60
+   IdentityFile ~/.ssh/id_rsa
+Host dev+*
+    ProxyCommand nc -x localhost:3130 $(echo %h | sed 's/^.*+//;') %p
+
+Host dickbutt.party
+   User jrouly
+Host rouly.net
+   User jrouly
