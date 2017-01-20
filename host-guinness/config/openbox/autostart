@@ -1,4 +1,5 @@
-~/bin/wallpaper &  ## wallpaper gallery script
+# ~/bin/wallpaper &  ## wallpaper gallery script
+~/.fehbg &
 
 urxvtd &                      ## terminal daemon (increases responsiveness)
 
