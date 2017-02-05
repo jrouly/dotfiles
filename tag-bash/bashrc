@@ -61,7 +61,7 @@ alias uptime='uptime -p'
 alias free='free -h'
 alias grep='grep --color=always'
 
-alias synctime='sudo ntpd -qg'
+alias ejabberdctl='sudo -u jabber ejabberdctl'
 
 alias off='systemctl poweroff'
 alias reboot='systemctl reboot'
