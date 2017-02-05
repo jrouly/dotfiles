@@ -1,7 +1,7 @@
 [user]
   email = michel.rouly@gmail.com
   name = Jean Michel Rouly
-  signingkey = 88C35818
+  signingkey = 1DFE3B2C
 [push]
   default = simple
 [pull]
