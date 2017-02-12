@@ -18,7 +18,7 @@ shopt -s checkwinsize
 
 # EXPORT ENVIRONMENT VARIABLES
 export EDITOR=vim
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
 export TRJ_HOME=/home/jrouly/code/trajectory
 
 

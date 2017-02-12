@@ -12,7 +12,7 @@ volumeicon &
 conky -d -c ~/.config/conky/left.rc &     ## left screen system monitor
 conky -d -c ~/.config/conky/right.rc &    ## right screen system monitor
 
-dropbox &                    ## dropbox daemon
+# dropbox &                    ## dropbox daemon
 
 xset -dpms & xset s off &     ## disable screen blanking
 
