@@ -5,21 +5,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Initialize gpg-agent with ssh support.
-# eval "$(gpg-agent --daemon --enable-ssh-support 2> /dev/null)"
-# export SSH_AUTH_SOCK=/home/jrouly/.gnupg/S.gpg-agent.ssh
-
 source /usr/share/git/completion/git-completion.bash
-
-# set up amazon aws credentials for ec2 api tools
-# . /home/jrouly/.ec2/config
 
 shopt -s checkwinsize
 
-# EXPORT ENVIRONMENT VARIABLES
 export EDITOR=vim
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-export TRJ_HOME=/home/jrouly/code/trajectory
+export JAVA_HOME="/usr/lib/jvm/default"
 
 
 function parse_git_branch () {
@@ -40,10 +32,7 @@ PATH=$PATH:/home/jrouly/bin
 PATH=$PATH:/home/jrouly/.screenlayout
 PATH=$PATH:/home/jrouly/.gem/ruby/2.2.0/bin/
 PATH=$PATH:/home/jrouly/.meteor
-
 PATH=$PATH:/data/packages/
-
-export JAVA_HOME="/usr/lib/jvm/default"
 
 VBOX_USB=usbfs
 
@@ -66,20 +55,9 @@ alias uptime='uptime -p'
 alias free='free -h'
 alias grep='grep --color=always'
 
-alias ejabberdctl='sudo -u jabber ejabberdctl'
-
-alias off='systemctl poweroff'
-alias reboot='systemctl reboot'
-alias pms='systemctl suspend || /home/jrouly/bin/lock-script'
-
-alias sup='sudo pacman -Syu'
-
-alias ipconfig='nmcli dev show enp0s25'
-
 function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
-
 
 
 complete -cf man
