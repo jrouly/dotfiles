@@ -26,11 +26,16 @@ function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
-PS1=$'[\u@\h \W\[\e[32m\]$(parse_git_branch)\[\e[00m\]]\$ '
+function parse_git_status() {
+  git status --porcelain=v1 2> /dev/null | wc -l | tr -d ' ' | awk '$1 > 0 {print " (*)"}'
+}
+
+PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
 
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
 PATH=$PATH:.
+PATH=$PATH:node_modules/.bin
 PATH=$PATH:/home/jrouly/bin
 PATH=$PATH:/home/jrouly/.screenlayout
 PATH=$PATH:/home/jrouly/.gem/ruby/2.2.0/bin/
