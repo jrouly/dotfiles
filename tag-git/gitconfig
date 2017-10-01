@@ -18,3 +18,5 @@
   clone = clone -o upstream
 [http]
   sslVerify = false
+[credential]
+  helper = cache --timeout 18000

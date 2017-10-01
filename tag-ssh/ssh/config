@@ -9,7 +9,6 @@ Host zeus
 Host rouly.net
   User jrouly
   HostName rouly.net
-  RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
   GSSAPIAuthentication no
 
 Host rpi
