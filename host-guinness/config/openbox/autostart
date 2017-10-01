@@ -12,8 +12,21 @@ volumeicon &
 conky -d -c ~/.config/conky/left.rc &     ## left screen system monitor
 conky -d -c ~/.config/conky/right.rc &    ## right screen system monitor
 
-# dropbox &                    ## dropbox daemon
-
 xset -dpms & xset s off &     ## disable screen blanking
 
-systemctl --user restart gpg-agent
+systemctl --user restart gpg-agent &
+
+redshift &
+
+# BlueTooth management
+/usr/lib/blueberry/blueberry-obex-agent.py &
+# blueberry-tray &
+
+# Gnome Keyring daemon
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11 &
+/usr/bin/gnome-keyring-daemon --start --components=secrets &
+/usr/bin/gnome-keyring-daemon --start --components=ssh &
+
+gsettings-data-convert &      # GNOME Desktop settings
+nm-applet &                   # NetworkManager Applet
+start-pulseaudio-x11          # PulseAudio Daemon
