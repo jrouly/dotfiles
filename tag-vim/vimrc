@@ -112,3 +112,8 @@ vnoremap <silent> # :<C-U>
 
 " JSON Formatting with Python
 com! FormatJson %!python -m json.tool
+
+" disable Syntastic for scala and sbt files
+let g:syntastic_mode_map = {
+  \ "mode": "active",
+  \ "passive_filetypes": ["scala", "sbt"] }
