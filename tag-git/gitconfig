@@ -16,6 +16,7 @@
   a = commit -a --amend
   prm = pull --rebase upstream master
   clone = clone -o upstream
+  co = checkout
 [http]
   sslVerify = false
 [credential]

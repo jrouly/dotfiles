@@ -1,0 +1,11 @@
+freshclam \
+  --quiet \
+  --stdout
+
+clamscan \
+  --stdout \
+  --suppress-ok-results \
+  --recursive \
+  --infected \
+  --exclude-dir="^/sys" \
+  /

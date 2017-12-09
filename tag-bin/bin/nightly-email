@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pacman -Syy 2&> /dev/null
+
+VULNERABILITIES=$(arch-audit -q -u | wc -l)
+PACKAGES=$(pacman -Qu | wc -l)
+
+echo "Security updates: $VULNERABILITIES"
+echo "Out of date packages: $PACKAGES"
+echo "Have a good night!"
