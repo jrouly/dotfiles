@@ -5,7 +5,6 @@
 [push]
   default = simple
 [pull]
-  rebase = true
 [commit]
   gpgSign = true
 [core]
@@ -17,7 +16,14 @@
   prm = pull --rebase upstream master
   clone = clone -o upstream
   co = checkout
+  cob = checkout -b
+  d = diff
+  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
 [http]
   sslVerify = false
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
 [credential]
   helper = cache --timeout 18000
