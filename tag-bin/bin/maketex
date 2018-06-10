@@ -1,0 +1,12 @@
+#!/bin/bash
+
+TMPFILE=$(mktemp -d)
+
+cp ~/.latex/Makefile $TMPFILE/
+cp -r . $TMPFILE/
+
+make -C $TMPFILE "$@"
+
+cp $TMPFILE/*.pdf .
+
+rm -rf $TMPFILE
