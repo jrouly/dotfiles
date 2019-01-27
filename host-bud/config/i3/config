@@ -14,7 +14,8 @@ font pango:Source Code Pro 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+x kill
@@ -164,4 +165,7 @@ bar {
         workspace_buttons no
 }
 
+exec unclutter
 exec feh --bg-scale ~/.wallpaper.jpg --no-fehbg
+exec nm-applet
+exec urxvtd
