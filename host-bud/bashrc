@@ -1,0 +1,68 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+source /usr/share/git/completion/git-completion.bash
+
+shopt -s checkwinsize
+
+export EDITOR=vim
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export JAVA_HOME="/usr/lib/jvm/default"
+
+
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+}
+
+function parse_git_status() {
+  git status --porcelain=v1 2> /dev/null | wc -l | tr -d ' ' | awk '$1 > 0 {print " (*)"}'
+}
+
+# PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
+
+
+# CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
+PATH=$PATH:.
+PATH=$PATH:node_modules/.bin
+PATH=$PATH:/home/jrouly/bin
+PATH=$PATH:/home/jrouly/.screenlayout
+PATH=$PATH:/home/jrouly/.gem/ruby/2.2.0/bin/
+PATH=$PATH:/home/jrouly/.meteor
+PATH=$PATH:/data/packages/
+
+VBOX_USB=usbfs
+
+
+# ALIAS COMMANDS TO EASIER COMMANDS
+alias ls='ls --color=auto -N'
+alias ll='ls -lh'
+alias la='ll -A'
+alias lr='ll -R'
+alias l='ll'
+alias more='less'
+alias grep='grep'
+alias df='df -h'
+alias du='du -ch'
+alias mkdir='mkdir -p -v'
+alias nano='nano -w'
+alias vi='vim'
+alias py='python2.7'
+alias uptime='uptime -p'
+alias free='free -h'
+alias grep='grep --color=always'
+
+function fname() { find . -iname "*$@*"; }
+function mcd() { mkdir $1 && cd $1; }
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
+
+complete -cf man
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
