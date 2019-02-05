@@ -11,26 +11,26 @@ font pango:Source Code Pro 14
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvtc
+# bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id urxvtc
 
 # Kill focused window.
 bindsym $mod+x kill
 
 # Start dmenu launcher.
-bindsym $mod+d exec dmenu_run -fn 'Source Code Pro-15' -i
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Source Code Pro-15' -i
 
 # start passmenu launcher.
-bindsym $mod+p exec passmenu -fn 'Source Code Pro-15' -i
+bindsym $mod+p exec --no-startup-id passmenu -fn 'Source Code Pro-15' -i
 
 # Screen brightness.
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Audio settings.
-bindsym XF86AudioRaiseVolume exec amixer set Master 10%+
-bindsym XF86AudioLowerVolume exec amixer set Master 10%-
-bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 10%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # Change focus.
 bindsym $mod+h focus left
@@ -173,8 +173,8 @@ bindsym $mod+Shift+q mode "$mode_system"
 
 
 # Autostart applications.
-exec unclutter
-exec feh --bg-scale ~/.wallpaper.jpg --no-fehbg
-exec nm-applet
-exec urxvtd
-exec redshift
+exec --no-startup-id unclutter
+exec --no-startup-id feh --bg-scale ~/.wallpaper.jpg --no-fehbg
+exec --no-startup-id nm-applet
+exec --no-startup-id urxvtd
+exec --no-startup-id redshift
