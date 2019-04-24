@@ -23,8 +23,10 @@ Host prod+*
 
 Host jump-phi
    Hostname jump-phi.werally.in
+   DynamicForward 3129
    User mrouly
    ServerAliveInterval 60
+   IdentityFile ~/.ssh/id_rsa
 
 Host jump-dev
    Hostname jump-dev.werally.in
@@ -33,8 +35,21 @@ Host jump-dev
    ServerAliveInterval 60
    IdentityFile ~/.ssh/id_rsa
 
-Host dev+*
-    ProxyCommand nc -x localhost:3130 $(echo %h | sed 's/^.*+//;') %p
+Host jump-dev-debug
+   Hostname jump-dev.werally.in
+   LocalForward 9998 ip-10-42-33-109.ec2.internal:31109
+   User     mrouly
+   ServerAliveInterval 60
+   IdentityFile ~/.ssh/id_rsa
 
-Host rouly.net
-   User jrouly
+Host dev+*
+   ProxyCommand nc -x localhost:3130 $(echo %h | sed 's/^.*+//;') %p
+
+Host jump-neptune
+   Hostname jumphost.kind-lake.rally-dev.com
+   DynamicForward 3131
+   User michel.rouly
+   IdentityFile ~/.ssh/id_rsa
+   ServerAliveInterval 500
+   Host neptune+*
+   ProxyCommand nc -x localhost:3131 $(echo %h | sed 's/^.*+//;') %p
