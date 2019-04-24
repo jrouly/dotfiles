@@ -19,6 +19,8 @@ set directory=~/.vim/swap//,/tmp/vim/swap//
 autocmd FileType tex setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
+au BufNewFile,BufRead *.csv set tw=0
+au BufNewFile,BufRead Jenkinsfile set syntax=groovy
 
 
 " Spellchecking & Autocompletion
@@ -58,7 +60,8 @@ highlight CursorColumn ctermbg=Blue
 set t_Co=256
 let g:solarized_visibility="high" " high visibility for line endings
 " let g:solarized_termcolors=256    " 256 colors
-set background=dark   " for solarized
+set background=dark   " for solarized dark
+"set background=light   " for solarized light
 colorscheme solarized " for solarized
 
 
@@ -116,4 +119,6 @@ com! FormatJson %!python -m json.tool
 " disable Syntastic for scala and sbt files
 let g:syntastic_mode_map = {
   \ "mode": "active",
-  \ "passive_filetypes": ["scala", "sbt"] }
+  \ "passive_filetypes": ["scala", "sbt", "tex"] }
+
+vnoremap <silent><leader>y :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
