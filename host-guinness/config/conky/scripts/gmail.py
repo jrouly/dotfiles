@@ -55,6 +55,8 @@ def print_formatted_emails(soup):
 if __name__ == '__main__':
 
     try:
+        raise Exception
+
         if len(sys.argv) != 3 or sys.argv[2] not in actions:
             # Usage information is suppressed for quiet use in conky.
             #print('Usage: gmail.py credentials-file action')

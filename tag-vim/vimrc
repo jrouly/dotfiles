@@ -16,7 +16,7 @@ set directory=~/.vim/swap//,/tmp/vim/swap//
 
 
 " Automatic per-filetype settings
-autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType tex setlocal spell spelllang=en_us textwidth=0
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
 au BufNewFile,BufRead *.csv set tw=0
@@ -44,7 +44,7 @@ set number         " show line numbers
 set showcmd        " always show current command
 set showmode       " always show current mode
 set showmatch      " show matching brackets & parentheses
-" set list listchars=tab:▸·,trail:·
+set list listchars=tab:>·,trail:~
 set title          " always show title
 set ruler          " always show information at the bottom
 

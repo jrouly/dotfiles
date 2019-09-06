@@ -13,6 +13,9 @@ export EDITOR=vim
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export JAVA_HOME="/usr/lib/jvm/default"
 
+export GOPATH=/home/jrouly/.go
+
+export SBT_OPTS="-Xmx2048m -Xms2048m -Duser.timezone=EST -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=128m"
 
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
@@ -27,12 +30,15 @@ PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
 PATH=$PATH:.
-PATH=$PATH:node_modules/.bin
 PATH=$PATH:/home/jrouly/bin
 PATH=$PATH:/home/jrouly/.screenlayout
 PATH=$PATH:/home/jrouly/.gem/ruby/2.2.0/bin/
 PATH=$PATH:/home/jrouly/.meteor
 PATH=$PATH:/data/packages/
+PATH=$PATH:node_modules/.bin
+PATH=$PATH:/home/jrouly/.local/bin
+PATH=$PATH:/home/jrouly/.npm-global/bin
+PATH=$PATH:$GOPATH/bin
 
 VBOX_USB=usbfs
 
@@ -54,6 +60,7 @@ alias py='python2.7'
 alias uptime='uptime -p'
 alias free='free -h'
 alias grep='grep --color=always'
+alias rmt='rm -rf $(find . -iname target -type d)'
 
 function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
@@ -61,3 +68,8 @@ function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
 
 complete -cf man
+
+
+export AWS_PROFILE=jrouly
+export AWS_REGION=us-east-1
+export MFA_STS_DURATION=129600

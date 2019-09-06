@@ -74,8 +74,8 @@
 ! RXVT-Unicode settings -----------------------------------------------------------
 
 ! Font settings
-URxvt.font:             xft:Source Code Pro:size=10
-URxvt.boldFont:         xft:Source Code Pro:bold:size=10
+URxvt.font:             xft:Source Code Pro:size=12
+URxvt.boldFont:         xft:Source Code Pro:bold:size=12
 URxvt.letterSpace:      0
 
 ! Openbox settings

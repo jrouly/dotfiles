@@ -4,8 +4,8 @@ conky.config = {
   -- positioning
   alignment = 'bottom_right',
   background = true,
-  -- gap_x = 4,
-  gap_x = 1924,
+  gap_x = 4,
+  -- gap_x = 1924,
   gap_y = 4,
   minimum_height = 5,
   minimum_width = 1911,

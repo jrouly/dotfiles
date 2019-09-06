@@ -300,12 +300,8 @@
     <!-- Keybindings for running applications -->
     <keybind key="A-F2">
       <action name="Execute">
-        <command>gmrun</command>
-      </action>
-    </keybind>
-    <keybind key="A-F3">
-      <action name="Execute">
-        <command>dmenu_run -i</command>
+        <!--<command>gmrun</command>-->
+        <command>sh dmenu_run</command>
       </action>
     </keybind>
     <keybind key="W-f">
@@ -393,6 +389,11 @@
         <command>scrot '%Y-%m-%d_%H\:%M.png' -q 100 -s -e 'mv $f /data/images/screenshots/'</command>
       </action>
     </keybind>
+    <keybind key="W-P">
+      <action name="Execute">
+        <command>/home/jrouly/bin/passmenu</command>
+      </action>
+    </keybind>
 <!--
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -404,6 +405,10 @@
         <command>amixer -q set Master 5- unmute</command>
       </action>
     </keybind>
+
+
+
+
     <keybind key="XF86AudioMute">
       <action name="Execute">
         <command>amixer -q set Master toggle</command>
