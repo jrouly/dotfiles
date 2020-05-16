@@ -11,3 +11,11 @@ Host bolognas
 Host jenkins.rouly.net
   User jrouly
   ForwardAgent yes
+
+Host home.assistant.local
+  User jrouly
+  ForwardAgent yes
+
+Host home.assistant.satellite.1.local
+  User jrouly
+  ForwardAgent yes

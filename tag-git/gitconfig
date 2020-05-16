@@ -6,10 +6,10 @@
   default = simple
 [pull]
 [commit]
-  gpgSign = true
+  gpgSign = false
 [core]
   editor = vim
-	excludesfile = /Users/michelrouly/.gitignore_global
+  excludesfile = /Users/michelrouly/.gitignore_global
 [alias]
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   s = status
@@ -25,8 +25,8 @@
 [http]
   sslVerify = false
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [credential]
   helper = cache --timeout 18000

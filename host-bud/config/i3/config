@@ -154,7 +154,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   status_command i3status
-  workspace_buttons no
+  workspace_buttons yes
 }
 
 # Set up screen locking mode with prompt.

@@ -1,7 +1,26 @@
-" Enable Pathogen
+" Enable vim-plug.
+call plug#begin('~/.vim/vim-plug')
 
-call pathogen#infect()
-call pathogen#helptags()
+" tpope
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+
+" etc
+Plug 'altercation/vim-colors-solarized'
+Plug 'derekwyatt/vim-scala'
+Plug 'leafgarland/typescript-vim'
+Plug 'udalov/kotlin-vim'
+
+" coc.nvim and plugins
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+
+" Initialize plugin system.
+call plug#end()
 
 
 " General Vim behavior
@@ -15,8 +34,29 @@ set fileformats=unix,dos,mac " try to recognize line endings
 set directory=~/.vim/swap//,/tmp/vim/swap//
 
 
+" netrw configurations
+" https://shapeshed.com/vim-netrw/
+" https://github.com/tpope/vim-vinegar
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
+
+" coc.nvim configurations
+set hidden
+" set nobackup
+" set nowritebackup
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
 " Automatic per-filetype settings
 autocmd FileType tex setlocal spell spelllang=en_us textwidth=0
+autocmd FileType json syntax match Comment +\/\/.\+$+
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
 au BufNewFile,BufRead *.csv set tw=0
@@ -26,7 +66,6 @@ au BufNewFile,BufRead Jenkinsfile set syntax=groovy
 " Spellchecking & Autocompletion
 set dictionary+=/usr/share/dict/words
 set complete+=k
-nnoremap <Leader>s :set dictionary=/dev/null<CR>
 
 
 " Search behaviour
@@ -34,7 +73,8 @@ set ignorecase     " make searches case insensitive
 set smartcase      " case sensitive when uppercase present
 set hlsearch       " highlight search terms
 
-" center the screen on search terms and undos/redos
+
+" Center the screen on search terms and undos/redos
 nnoremap n nzz
 nnoremap N Nzz
 
@@ -98,10 +138,7 @@ set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 nnoremap <space> za
 
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
 " Search for selected text, forwards or backwards.
-
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
   \gvy/<C-R><C-R>=substitute(
@@ -116,9 +153,5 @@ vnoremap <silent> # :<C-U>
 " JSON Formatting with Python
 com! FormatJson %!python -m json.tool
 
-" disable Syntastic for scala and sbt files
-let g:syntastic_mode_map = {
-  \ "mode": "active",
-  \ "passive_filetypes": ["scala", "sbt", "tex"] }
-
+" Mac OS copy/paste
 vnoremap <silent><leader>y :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
