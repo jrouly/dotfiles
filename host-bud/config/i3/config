@@ -10,6 +10,9 @@ font pango:Source Code Pro 14
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Hide window borders on the edge of a screen.
+hide_edge_borders both
+
 # start a terminal
 # bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 bindsym $mod+Return exec --no-startup-id urxvtc
