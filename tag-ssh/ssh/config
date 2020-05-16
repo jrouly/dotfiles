@@ -1,16 +1,13 @@
 IdentitiesOnly no
 
-Host zeus
-  User jrouly
-  HostName zeus.vse.gmu.edu
-  GSSAPIAuthentication no
-  LogLevel Quiet
-
 Host rouly.net
   User jrouly
-  HostName rouly.net
-  GSSAPIAuthentication no
+  ForwardAgent yes
 
-Host rpi
+Host bolognas
   User jrouly
-  HostName 192.168.1.92
+  ForwardAgent yes
+
+Host jenkins.rouly.net
+  User jrouly
+  ForwardAgent yes
