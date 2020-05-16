@@ -25,7 +25,9 @@ function parse_git_status() {
   git status --porcelain=v1 2> /dev/null | wc -l | tr -d ' ' | awk '$1 > 0 {print " (*)"}'
 }
 
-PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
+if [ "$TERM" != "linux" ]; then
+  PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
+fi
 
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
@@ -61,6 +63,7 @@ alias uptime='uptime -p'
 alias free='free -h'
 alias grep='grep --color=always'
 alias rmt='rm -rf $(find . -iname target -type d)'
+alias tf=terraform
 
 function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
@@ -73,3 +76,25 @@ complete -cf man
 export AWS_PROFILE=jrouly
 export AWS_REGION=us-east-1
 export MFA_STS_DURATION=129600
+
+if [ "$TERM" = "linux" ]; then
+  echo -en "\e]P0000000" #black
+  echo -en "\e]P8222222" #darkgrey
+  echo -en "\e]P1803232" #darkred
+  echo -en "\e]P9982b2b" #red
+  echo -en "\e]P25b762f" #darkgreen
+  echo -en "\e]PA89b83f" #green
+  echo -en "\e]P3aa9943" #brown
+  echo -en "\e]PBefef60" #yellow
+  echo -en "\e]P4324c80" #darkblue
+  echo -en "\e]PC2b4f98" #blue
+  echo -en "\e]P5706c9a" #darkmagenta
+  echo -en "\e]PD826ab1" #magenta
+  echo -en "\e]P692b19e" #darkcyan
+  echo -en "\e]PEa1cdcd" #cyan
+  echo -en "\e]P7ffffff" #lightgrey
+  echo -en "\e]PFdedede" #white
+  setterm -background black -store
+  setterm -foreground white -store
+  clear #for background artifacting
+fi
