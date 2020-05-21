@@ -4,6 +4,10 @@ Host rouly.net
   User jrouly
   ForwardAgent yes
 
+Host bolognas
+  User jrouly
+  ForwardAgent yes
+
 Host jenkins.rouly.net
   User jrouly
   ForwardAgent yes
@@ -13,13 +17,5 @@ Host home.assistant.local
   ForwardAgent yes
 
 Host home.assistant.satellite.1.local
-  User jrouly
-  ForwardAgent yes
-
-Host pi.hole
-  User jrouly
-  ForwardAgent yes
-
-Host 192.168.0.22
   User jrouly
   ForwardAgent yes
