@@ -1,27 +1,9 @@
-" Enable vim-plug.
-call plug#begin('~/.vim/vim-plug')
+let mapleader="\\" " set leader
 
-" tpope
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
-
-" etc
-Plug 'altercation/vim-colors-solarized'
-Plug 'derekwyatt/vim-scala'
-Plug 'leafgarland/typescript-vim'
-Plug 'udalov/kotlin-vim'
-
-" coc.nvim and plugins
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
-
-" Initialize plugin system.
-call plug#end()
-
+" Includes.
+runtime plug.vim
+runtime coc.vim
+runtime statusline.vim
 
 " General Vim behavior
 set nocompatible   " stop vim from emulating vi
@@ -32,35 +14,39 @@ set ttyfast        " scroll quickly
 set backspace=2    " use backspace everywhere
 set fileformats=unix,dos,mac " try to recognize line endings
 set directory=~/.vim/swap//,/tmp/vim/swap//
+set number         " show absolute line number
+set relativenumber " show relative line numbers
+set showcmd        " always show current command
+set showmode       " always show current mode
+set showmatch      " show matching brackets & parentheses
+set list listchars=tab:>·,trail:~ " trailing characters
+set title          " always show title
 
 
 " netrw configurations
 " https://shapeshed.com/vim-netrw/
 " https://github.com/tpope/vim-vinegar
+" hide hidden files by default
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 
-" coc.nvim configurations
-set hidden
-" set nobackup
-" set nowritebackup
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
 " Automatic per-filetype settings
-autocmd FileType tex setlocal spell spelllang=en_us textwidth=0
-autocmd FileType json syntax match Comment +\/\/.\+$+
-au BufNewFile,BufRead *.scala set filetype=scala
-au BufNewFile,BufRead *.sbt set filetype=scala
-au BufNewFile,BufRead *.csv set tw=0
-au BufNewFile,BufRead Jenkinsfile set syntax=groovy
+augroup filetypes
+
+  " Clear the group.
+  au!
+
+  " Filetype detection
+  au BufNewFile,BufRead *.scala set filetype=scala
+  au BufNewFile,BufRead *.sbt set filetype=scala
+  au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+  au BufNewFile,BufRead *.csv set tw=0
+
+  " Settings
+  au FileType tex setlocal spell spelllang=en_us textwidth=0
+  au FileType json syntax match Comment +\/\/.\+$+
+
+augroup END
 
 
 " Spellchecking & Autocompletion
@@ -77,16 +63,6 @@ set hlsearch       " highlight search terms
 " Center the screen on search terms and undos/redos
 nnoremap n nzz
 nnoremap N Nzz
-
-
-" General UI stuff
-set number         " show line numbers
-set showcmd        " always show current command
-set showmode       " always show current mode
-set showmatch      " show matching brackets & parentheses
-set list listchars=tab:>·,trail:~
-set title          " always show title
-set ruler          " always show information at the bottom
 
 
 " Coloured columns
@@ -125,10 +101,6 @@ set encoding=utf-8
 
 " <Ctrl-l> redraws the screen and removes search highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-" Autocompletion for python
-let g:pydiction_location="~/.vim/bundle/pydiction/complete-dict"
-let g:pydiction_menu_height=5
 
 
 " Code folding
