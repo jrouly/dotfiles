@@ -1,17 +1,12 @@
 # Dotfiles
 
-This repo uses [rcm][]. Also, all dotfiles are kept in tag-specific directories.
-This allows for easy cherry-picking.
+This repo uses [rcm][].
 
-For example, if you want only my vim setup:
-
+### Quickstart
 ```
-$ git clone https://github.com/jrouly/dotfiles .jrouly-dotfiles
-$ rcup -d .jrouly-dotfiles -t vim
+$ git clone https://github.com/jrouly/dotfiles .dotfiles
+$ rcup -t vim
 ```
-
-These options could be made the default in your own `~/.rcrc`.
-
-See more details with `man 7 rcm`.
+Manual: `man rcm`.
 
 [rcm]: https://github.com/thoughtbot/rcm
