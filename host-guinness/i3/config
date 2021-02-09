@@ -2,33 +2,29 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Mod1 = Alt
-# Mod2 =
-# Mod3 =
-# Mod4 = Meta
 set $mod Mod4
 
 # Font for window titles.
 # Will also be used by the bar unless a different font.
 font pango:Source Code Pro 10
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# Use Mouse+$mod to drag floating windows to their wanted position.
 floating_modifier $mod
 
-# Hide window borders on the edge of a screen.
-hide_edge_borders both
-
-# Start a terminal.
-bindsym $mod+Return exec --no-startup-id urxvtc
+# Use the normal border by default.
+default_border normal
 
 # Kill focused window.
 bindsym $mod+x kill
 
-# Start dmenu launcher.
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Source Code Pro-11' -i
+# Start a terminal.
+bindsym $mod+Return exec --no-startup-id urxvtc
 
-# Start passmenu launcher.
-bindsym $mod+p exec --no-startup-id passmenu -fn 'Source Code Pro-11' -i
+# dmenu
+set $dmenu_args -i -fn 'Source Code Pro-11'
+bindsym $mod+d exec --no-startup-id dmenu_run $dmenu_args
+bindsym $mod+p exec --no-startup-id passmenu $dmenu_args
+bindsym $mod+m exec --no-startup-id mpdmenu :: $dmenu_args
 
 # Screenshot.
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
@@ -42,17 +38,14 @@ bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioNext exec --no-startup-id mpc next
 
+# ncmpcpp
+bindsym $mod+n exec --no-startup-id urxvtc -e ncmpcpp
+
 # Change focus.
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# Alternatively, you can use the cursor keys:
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
 
 # Move focused window.
 bindsym $mod+Shift+h move left
@@ -60,16 +53,10 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# Alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
-
 # Split orientation (horizontal, vertical).
-bindsym $mod+Control+v split h
-bindsym $mod+Control+h split v
-bindsym $mod+e layout toggle split # toggle split
+bindsym $mod+q split vertical
+bindsym $mod+w split horizontal
+bindsym $mod+e split toggle
 
 # Enter fullscreen mode for the focused container.
 bindsym $mod+f fullscreen toggle
@@ -77,10 +64,10 @@ bindsym $mod+f fullscreen toggle
 # Change container layout (tabbed, split).
 bindsym $mod+Shift+t layout toggle tabbed splith
 
-# Toggle tiling / floating.
+# Toggle floating.
 bindsym $mod+Shift+space floating toggle
 
-# Change focus between tiling / floating windows.
+# Toggle focus between tiled/floating windows.
 bindsym $mod+space focus mode_toggle
 
 # Focus the parent container.
@@ -156,7 +143,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
+  status_command i3status -c ~/.i3/status.conf
   workspace_buttons yes
 }
 
