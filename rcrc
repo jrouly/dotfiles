@@ -1,4 +1,3 @@
-DOTFILES_DIRS="$HOME/.dotfiles"
 EXCLUDES="README.md"
 TAGS="bash bin git gnupg pub-keys ssh vim"
 UNDOTTED="bin keys"
