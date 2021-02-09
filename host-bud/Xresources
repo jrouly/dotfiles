@@ -95,7 +95,7 @@ URxvt.secondaryScreen:  1
 URxvt.secondaryScroll:  0
 
 ! Installed Perl extensions
-URxvt.perl-ext-common:  default,clipboard
+URxvt.perl-ext-common:  default,clipboard,tabbedex,resize-font,fullscreen
 
 ! Clipboard
 URxvt.iso14755:         false
