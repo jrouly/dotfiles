@@ -5,7 +5,7 @@
 [push]
   default = simple
 [pull]
-	rebase = true
+  rebase = true
 [commit]
   gpgSign = false
 [core]
@@ -19,10 +19,6 @@
   prm = pull --rebase upstream master
   clone = clone -o upstream
   co = checkout
-  cob = checkout -b
-  d = diff
-  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
-  pr = "!~/bin/pr"
 [http]
   sslVerify = false
 [filter "lfs"]
