@@ -34,14 +34,13 @@ bindsym $mod+p exec --no-startup-id passmenu -fn 'Source Code Pro-11' -i
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 bindsym XF86Tools exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 
-# Audio settings.
-# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 10%+
-# bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%-
-# bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
-
+# Media keys.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
 
 # Change focus.
 bindsym $mod+h focus left
@@ -182,12 +181,12 @@ mode "$mode_system" {
 bindsym $mod+Shift+q mode "$mode_system"
 
 # Autostart applications.
-exec --no-startup-id ~/.screenlayout/default.sh
-exec --no-startup-id unclutter
-exec --no-startup-id unclutter
-exec --no-startup-id volumeicon
-exec --no-startup-id nm-applet
-exec --no-startup-id urxvtd
-exec --no-startup-id redshift-gtk
-exec --no-startup-id systemctl --user restart gpg-agent
 exec --no-startup-id ~/.fehbg
+exec --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift-gtk
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id systemctl --user restart gpg-agent
+exec --no-startup-id unclutter
+exec --no-startup-id urxvtd
+exec --no-startup-id volumeicon
