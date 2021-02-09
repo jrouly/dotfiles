@@ -9,13 +9,16 @@ source /usr/share/git/completion/git-completion.bash
 
 shopt -s checkwinsize
 
+# Global app options.
+export AWS_PROFILE=jrouly
+export AWS_REGION=us-east-1
 export EDITOR=vim
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-export JAVA_HOME="/usr/lib/jvm/default"
-
 export GOPATH=/home/jrouly/.go
-
+export JAVA_HOME="/usr/lib/jvm/default"
+export MFA_STS_DURATION=129600
 export SBT_OPTS="-Xmx2048m -Xms2048m -Duser.timezone=EST -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=128m"
+export WINEARCH=win64
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
@@ -45,7 +48,7 @@ PATH=$PATH:$GOPATH/bin
 VBOX_USB=usbfs
 
 
-# ALIAS COMMANDS TO EASIER COMMANDS
+# aliases
 alias ls='ls --color=auto -N'
 alias ll='ls -lh'
 alias la='ll -A'
@@ -69,13 +72,7 @@ function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
-
 complete -cf man
-
-
-export AWS_PROFILE=jrouly
-export AWS_REGION=us-east-1
-export MFA_STS_DURATION=129600
 
 if [ "$TERM" = "linux" ]; then
   echo -en "\e]P0000000" #black
@@ -98,3 +95,6 @@ if [ "$TERM" = "linux" ]; then
   setterm -foreground white -store
   clear #for background artifacting
 fi
+
+# Host-specific extensions/overrides.
+if [[ -f .bashrc_host ]] ; then source .bashrc_host ; fi
