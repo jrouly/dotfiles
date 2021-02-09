@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "Backup must be run as root."
+   exit 1
+fi
+
+PARAMS=(
+  --archive      # archive mode; equals -rlptgoD (no -H,-A,-X)
+  --xattrs       # preserve extended attributes
+  --hard-links   # preserve hard links
+  --sparse       # turn sequences of nulls into sparse blocks
+  --numeric-ids  # don't map uid/gid values by user/group name
+  --delete       # delete extraneous files from dest dirs
+  --info=progress2 # fine-grained informational verbosity
+  --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}
+)
+
+rsync ${PARAMS[@]} / jrouly@bolognas.lan:$(hostname)-system-backup
