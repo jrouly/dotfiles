@@ -15,3 +15,6 @@ Host home.assistant.lan
 Host home.assistant.satellite.1.lan
   User jrouly
   ForwardAgent yes
+
+Host aur.archlinux.org
+  User jrouly
