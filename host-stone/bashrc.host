@@ -1,1 +1,3 @@
+#!/bin/bash
+
 PS1=$'[\h:\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '

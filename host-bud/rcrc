@@ -1,4 +1,4 @@
 DOTFILES_DIRS="$HOME/.dotfiles"
 EXCLUDES="README.md"
-TAGS="bin git gnupg pub-keys ssh vim X"
+TAGS="bin git gnupg pub-keys ssh vim x"
 UNDOTTED="bin keys"

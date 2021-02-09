@@ -97,4 +97,4 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # Host-specific extensions/overrides.
-if [[ -f .bashrc_host ]] ; then source .bashrc_host ; fi
+if [[ -f .bashrc.host ]] ; then . .bashrc.host ; fi

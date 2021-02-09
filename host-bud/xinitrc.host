@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# update touchpad driver properties
+xinput set-prop "DELL0741:00 06CB:7E7E Touchpad" 304 1
+xinput set-prop "DELL0741:00 06CB:7E7E Touchpad" 314 0

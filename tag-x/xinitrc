@@ -12,19 +12,22 @@ if [ -f $sysmodmap ]; then xmodmap $sysmodmap ; fi
 if [ -f "$userresources" ]; then xrdb -merge "$userresources" ; fi
 if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" ; fi
 
-# start some nice programs
+# start systemwide defaults.
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
 fi
 
-# update touchpad driver properties
-xinput set-prop "DELL0741:00 06CB:7E7E Touchpad" 304 1
-xinput set-prop "DELL0741:00 06CB:7E7E Touchpad" 314 0
+# set cursor repeat rate
+xset r rate 200 30
 
+# set wine system architecture
 export WINEARCH=win64
+
+# Host-specific extensions/overrides.
+if [[ -f .xinitrc.host ]] ; then . .xinitrc.host ; fi
 
 # start i3
 exec i3
