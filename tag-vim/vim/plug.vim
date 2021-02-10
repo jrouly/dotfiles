@@ -14,6 +14,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'derekwyatt/vim-scala'
 Plug 'leafgarland/typescript-vim'
 Plug 'udalov/kotlin-vim'
+Plug 'airblade/vim-gitgutter'
 
 " coc.nvim and plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
