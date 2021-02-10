@@ -1,0 +1,26 @@
+#!/bin/bash
+
+CRITICAL=50
+WARN=35
+
+TEMPS=(
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input)
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp2_input)
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp3_input)
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp4_input)
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp5_input)
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp6_input)
+  $(cat /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp7_input)
+)
+
+MAX_TEMP=$(printf "%d\n" ${TEMPS[@]} | sort -rn | head -1)
+TEMP=$(echo "${MAX_TEMP} / 1000" | bc -l | cut -d '.' -f 1)
+
+if [[ "${TEMP}" != "" ]] ; then
+  echo "${TEMP}°C"
+  echo "${TEMP}°C"
+
+  # Set critical/warn flags.
+  [[ ${TEMP} -ge "${CRITICAL}" ]] && exit 33
+  [[ ${TEMP} -ge "${WARN}" ]] && echo "#FF8000"
+fi

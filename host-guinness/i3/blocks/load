@@ -1,0 +1,18 @@
+#!/bin/bash
+
+CRITICAL=1200
+WARN=600
+
+LOAD=$(cat /proc/loadavg | awk -F ' ' '{print $1}')
+
+if [[ "${LOAD}" != "" ]] ; then
+  LOAD_PERC=$(echo "scale=0; ${LOAD} * 100" | bc -l)
+  LOAD_PERC=${LOAD_PERC%.*}
+
+  echo "cpu ${LOAD_PERC}%" # full_text
+  echo "${LOAD_PERC}%" # short_text
+
+  # Set critical/warn flags.
+  [[ ${LOAD_PERC} -ge "${CRITICAL}" ]] && exit 33
+  [[ ${LOAD_PERC} -ge "${WARN}" ]] && echo "#FF8000"
+fi
