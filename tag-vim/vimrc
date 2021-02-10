@@ -14,13 +14,18 @@ set ttyfast        " scroll quickly
 set backspace=2    " use backspace everywhere
 set fileformats=unix,dos,mac " try to recognize line endings
 set directory=~/.vim/swap//,/tmp/vim/swap//
-set number         " show absolute line number
+
+
+" General UI stuff
+set number         " show line numbers
 set relativenumber " show relative line numbers
+set updatetime=50  " set global update time to be much faster (default=4000)
 set showcmd        " always show current command
 set showmode       " always show current mode
 set showmatch      " show matching brackets & parentheses
-set list listchars=tab:>·,trail:~ " trailing characters
+set list listchars=tab:▸·,trail:· " trailing characters
 set title          " always show title
+set ruler          " always show information at the bottom
 
 
 " netrw configurations
@@ -39,8 +44,8 @@ augroup filetypes
   " Filetype detection
   au BufNewFile,BufRead *.scala set filetype=scala
   au BufNewFile,BufRead *.sbt set filetype=scala
-  au BufNewFile,BufRead Jenkinsfile set filetype=groovy
   au BufNewFile,BufRead *.csv set tw=0
+  au BufNewFile,BufRead *Jenkinsfile* set filetype=groovy
 
   " Settings
   au FileType tex setlocal spell spelllang=en_us textwidth=0
