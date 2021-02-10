@@ -127,8 +127,10 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
+
 " JSON Formatting with Python
 com! FormatJson %!python -m json.tool
 
-" Mac OS copy/paste
-vnoremap <silent><leader>y :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
+
+" Host specific overrides
+runtime host.vim
