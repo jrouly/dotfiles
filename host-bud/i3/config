@@ -167,7 +167,6 @@ bar {
 exec --no-startup-id feh --bg-scale ~/.wallpaper.jpg --no-fehbg
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
-exec --no-startup-id systemctl --user restart gpg-agent
 exec --no-startup-id unclutter
 exec --no-startup-id urxvtd
 exec --no-startup-id onboard
