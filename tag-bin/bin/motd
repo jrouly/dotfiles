@@ -3,5 +3,5 @@
 PACKAGES=$(pacman -Qu | wc -l)
 VULNERABILITIES=$(arch-audit -qu | wc -l)
 
-echo "packages: $PACKAGES (security: $VULNERABILITIES)"
+echo "packages: $PACKAGES (security: $VULNERABILITIES) [$(date +%R)]"
 echo ""
