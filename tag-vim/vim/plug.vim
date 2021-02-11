@@ -15,11 +15,12 @@ Plug 'derekwyatt/vim-scala'
 Plug 'leafgarland/typescript-vim'
 Plug 'udalov/kotlin-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'shime/vim-livedown'
 
 " coc.nvim and plugins
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 
 " Initialize plugin system.
 call plug#end()

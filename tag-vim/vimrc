@@ -132,5 +132,13 @@ vnoremap <silent> # :<C-U>
 com! FormatJson %!python -m json.tool
 
 
+" Livedown plugin settings.
+" https://github.com/shime/vim-livedown
+let g:livedown_autorun = 0
+let g:livedown_open = 1
+let g:livedown_port = 9700
+let g:livedown_browser = "chromium"
+
+
 " Host specific overrides
 runtime host.vim

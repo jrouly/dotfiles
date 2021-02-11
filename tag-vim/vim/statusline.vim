@@ -24,7 +24,7 @@ function! StatuslineGitBranch()
 endfunction
 
 set statusline+=%{StatuslineGitBranch()}
-set statusline+=%<%.50F " filename, 50 chars
+set statusline+=%{expand('%')} " relative filename
 set statusline+=\ %m%r%w " modified, readonly, preview
 set statusline+=%= " switch to right side
 set statusline+=\ %y " file type
