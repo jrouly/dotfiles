@@ -1,0 +1,51 @@
+! Font settings
+URxvt.font:             xft:Source Code Pro:size=12
+URxvt.boldFont:         xft:Source Code Pro:bold:size=12
+URxvt.letterSpace:      0
+
+
+! Scrollbar settings
+URxvt.scrollBar:        false
+URxvt.scrollstyle:      plain
+URxvt.scrollColor:      #323232
+
+
+! Do not scroll with output.
+URxvt.scrollTtyOutput:  false
+URxvt.scrollTtyKeypress: true
+URxvt.secondaryScreen:  1
+URxvt.secondaryScroll:  0
+
+
+! Installed Perl extensions
+URxvt.perl-ext-common:  default,clipboard,tabbedex,resize-font
+
+
+! Clipboard
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
+URxvt.keysym.Shift-Control-C:  perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:  perl:clipboard:paste
+URxvt.clipboard.copycmd:       xsel -ib
+URxvt.clipboard.pastecmd:      xsel -ob
+
+
+! tabbedex settings
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    3
+URxvt.tabbed.tab-bg:    8
+URxvt.tabbed.no-tabbedex-keys:    true
+URxvt.keysym.Control-t:           perl:tabbedex:new_tab
+URxvt.keysym.Control-Tab:         perl:tabbedex:next_tab
+URxvt.keysym.Control-Shift-Tab:   perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-Left:  perl:tabbedex:move_tab_left
+URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
+URxvt.keysym.Control-Shift-R:     perl:tabbedex:rename_tab
+
+
+! resize-font settings
+URxvt.resize-font.smaller:     C-minus
+URxvt.resize-font.bigger:      C-plus
+URxvt.resize-font.reset:       C-equal
+URxvt.resize-font.show:        C-question
