@@ -163,7 +163,6 @@ bindsym $mod+Shift+q mode "$mode_system"
 # Start i3bar to display a workspace bar.
 # Populate bar with i3blocks.
 bar {
-  # status_command i3status -c ~/.i3/status.conf
   status_command i3blocks -c ~/.i3/blocks.conf
   workspace_buttons yes
 }
