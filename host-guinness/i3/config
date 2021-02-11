@@ -174,7 +174,6 @@ exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id systemctl --user restart gpg-agent
 exec --no-startup-id unclutter
 exec --no-startup-id urxvtd
 exec --no-startup-id volumeicon
