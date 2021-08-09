@@ -28,6 +28,7 @@ export NVM_DIR="$HOME/.nvm"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# Credential environment variables.
 if [ -f "$HOME/.bash_profile_credentials" ]; then
   . "$HOME/.bash_profile_credentials"
 fi
@@ -71,4 +72,4 @@ alias tfdocs='terraform-docs'
 function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
 function psgrep() { ps axu | grep -v grep | grep "$@" -i --color=auto; }
-function clear-dns() { sudo killall -HUP mDNSResponder; }
+function flush-dns() { sudo dscacheutil -flushcache ; sudo killall -HUP mDNSResponder; }
