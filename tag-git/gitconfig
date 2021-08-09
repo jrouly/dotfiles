@@ -1,6 +1,6 @@
 [user]
-  email = michel.rouly@gmail.com
-  name = Jean Michel Rouly
+  email = michel@rouly.net
+  name = Michel Rouly
   signingkey = 1DFE3B2C
 [push]
   default = simple
@@ -16,7 +16,7 @@
   s = status
   a = commit -a --amend
   d = diff
-  prm = pull --rebase upstream master
+  prm = pull --rebase upstream main
   clone = clone -o upstream
   co = checkout
 [http]
