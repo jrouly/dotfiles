@@ -1,56 +1,5 @@
 ForwardAgent yes
 
-Host jump
-   Hostname jump.audax.in
-   DynamicForward 3128
-   LocalForward 3199 partner-proxy.infra.audax.in:3128
-   User     mrouly
-   ServerAliveInterval 60
-
-Host old+*
-    ProxyCommand nc -x localhost:3128 $(echo %h | sed 's/^.*+//;') %p
-
-Host jump-prod
-   Hostname jump.werally.in
-   DynamicForward 3129
-   User     mrouly
-   ServerAliveInterval 60
-
-Host jump-prod-k8s
-   Hostname jumphost.rx-prod-1.rally-prod.com
-   DynamicForward 3132
-   User     michel.rouly
-   ServerAliveInterval 60
-
-Host prod+*
-    ProxyCommand nc -x localhost:3129 $(echo %h | sed 's/^.*+//;') %p
-
-Host jump-phi
-   Hostname jump-phi.werally.in
-   DynamicForward 3129
-   User mrouly
-   ServerAliveInterval 60
-
-Host jump-dev
-   Hostname jump-dev.werally.in
-   DynamicForward 3130
-   User     mrouly
-   ServerAliveInterval 60
-
-Host jump-dev-debug
-   Hostname jump-dev.werally.in
-   LocalForward 9998 ip-10-42-33-109.ec2.internal:31109
-   User     mrouly
-   ServerAliveInterval 60
-
-Host dev+*
-   ProxyCommand nc -x localhost:3130 $(echo %h | sed 's/^.*+//;') %p
-
-Host jump-neptune
-  # Hostname jumphost.upbeat-lamport.rally-dev.com
-   Hostname jumphost.jolly-flower.rally-dev.com
-   DynamicForward 3131
-   User michel.rouly
-   ServerAliveInterval 500
-   Host neptune+*
-   ProxyCommand nc -x localhost:3131 $(echo %h | sed 's/^.*+//;') %p
+Host rouly.net
+  Hostname rouly.net
+  User jrouly
