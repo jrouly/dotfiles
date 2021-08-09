@@ -1,0 +1,60 @@
+# AWS
+brew "aws-iam-authenticator"
+brew "awscli"
+
+# Python
+brew "poetry"
+brew "python@3.7"
+brew "python@3.9"
+
+# Shell
+brew "bash"
+brew "bash-completion"
+brew "rcm"
+brew "readline"
+brew "shellcheck"
+
+# Security
+brew "gnupg"
+brew "gnutls"
+brew "openssl@1.1"
+brew "pcsc-lite"
+brew "pinentry"
+brew "pinentry-mac"
+
+# Kubernetes
+brew "helm"
+brew "kubernetes-cli"
+cask "lens"
+brew "terraform"
+brew "terraform-docs"
+brew "tflint"
+
+# Languages
+brew "coursier"
+brew "gcc"
+brew "go"
+brew "node"
+brew "nvm"
+brew "openjdk"
+brew "r"
+
+# Apps
+cask "amethyst"
+cask "bitwarden"
+brew "bitwarden-cli"
+brew "git"
+brew "htop"
+cask "iterm2"
+brew "postgresql"
+brew "tig"
+brew "tree"
+brew "watch"
+
+# Etc.
+brew "graphviz"
+brew "libpng"
+brew "sqlite"
+brew "llvm"
+brew "xz"
+brew "zstd"
