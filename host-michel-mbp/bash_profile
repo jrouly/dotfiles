@@ -1,0 +1,74 @@
+# Coursier binaries.
+export PATH="$PATH:$HOME/Library/Application Support/Coursier/bin"
+
+if [ -f "$HOME/.bash_profile_homebrew" ]; then
+  . $HOME/.bash_profile_homebrew
+fi
+
+# bash-completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+. "$HOME/.helm-autocomplete.sh"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+source /usr/local/bin/virtualenvwrapper.sh
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+# gpg-agent
+# export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+if [ -f "$HOME/.bash_profile_credentials" ]; then
+  . "$HOME/.bash_profile_credentials"
+fi
+
+# Global app options
+export CDPATH=$CDPATH:$HOME/code
+export DAGSTER_HOME="$HOME/.dagster"
+export EDITOR=vim
+export PATH=$PATH:node_modules/.bin
+
+# PS1
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+}
+
+function parse_git_status() {
+  git status --porcelain=v1 2> /dev/null | wc -l | tr -d ' ' | awk '$1 > 0 {print " (*)"}'
+}
+
+if [ "$TERM" != "linux" ]; then
+  PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
+fi
+
+# Aliases.
+alias ll='ls -lh'
+alias la='ll -A'
+alias lr='ll -R'
+alias l='ll'
+alias more='less'
+alias df='df -h'
+alias du='du -ch'
+alias mkdir='mkdir -p -v'
+alias nano='nano -w'
+alias vi='vim'
+alias rmt='rm -rf $(find . -iname target -type d)'
+alias c="cd $HOME/code"
+alias tf='terraform'
+alias tfdocs='terraform-docs'
+
+# Misc functions.
+function fname() { find . -iname "*$@*"; }
+function mcd() { mkdir $1 && cd $1; }
+function psgrep() { ps axu | grep -v grep | grep "$@" -i --color=auto; }
+function clear-dns() { sudo killall -HUP mDNSResponder; }

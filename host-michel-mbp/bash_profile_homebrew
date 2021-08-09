@@ -1,0 +1,41 @@
+# Homebrew: python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/share/python:$PATH"
+
+# Homebrew: openssl 1.1
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+
+# Homebrew: sqlite
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/sqlite/lib"
+# export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+
+# Homebrew: openjdk
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+# export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+# Homebrew: pcsc-lite
+export PATH="/usr/local/opt/pcsc-lite/bin:$PATH"
+export PATH="/usr/local/opt/pcsc-lite/sbin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/pcsc-lite/lib"
+# export CPPFLAGS="-I/usr/local/opt/pcsc-lite/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/pcsc-lite/lib/pkgconfig"
+
+# Homebrew: llvm
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+# export LDFLAGS="-L/usr/local/opt/llvm/lib"
+# export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+# Homebrew: openblas
+# export LDFLAGS="-L/usr/local/opt/openblas/lib"
+# export CPPFLAGS="-I/usr/local/opt/openblas/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
+
+# Homebrew: tcl-tk
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
+# export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
