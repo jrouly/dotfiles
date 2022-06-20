@@ -28,7 +28,9 @@ bindsym $mod+m exec --no-startup-id mpdmenu :: $dmenu_args
 
 # Screenshot.
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym XF86Tools exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+XF86Tools exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
 # Media keys.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -170,6 +172,7 @@ bar {
 # Autostart applications.
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id signal-desktop --use-tray-icon --start-in-tray
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id start-pulseaudio-x11

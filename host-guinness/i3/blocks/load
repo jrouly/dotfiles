@@ -1,8 +1,8 @@
 #!/bin/bash
 
 CPUS=12
-CRITICAL=1200
-WARN=600
+CRITICAL=90
+WARN=50
 
 LOAD=$(cat /proc/loadavg | awk -F ' ' '{print $1}')
 
