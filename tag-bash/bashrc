@@ -13,14 +13,10 @@ shopt -s checkwinsize
 
 # Global app options.
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-export AWS_PROFILE=jrouly
-export AWS_REGION=us-east-1
 export EDITOR=vim
 export GOPATH=/home/jrouly/.go
 export JAVA_HOME="/usr/lib/jvm/default"
-export MFA_STS_DURATION=129600
 export SBT_OPTS="-Xmx2048m -Xms2048m -Duser.timezone=EST -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=128m"
-export WINEARCH=win64
 export VBOX_USB=usbfs
 
 
@@ -63,7 +59,6 @@ alias du='du -ch'
 alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias vi='vim'
-alias py='python2.7'
 alias uptime='uptime -p'
 alias free='free -h'
 alias grep='grep --color=always'
