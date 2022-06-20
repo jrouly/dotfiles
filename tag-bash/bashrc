@@ -35,13 +35,12 @@ fi
 
 # CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
 PATH=$PATH:.
-PATH=$PATH:node_modules/.bin
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.screenlayout
 PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin/
 PATH=$PATH:$HOME/.meteor
-PATH=$PATH:$HOME/.node_modules/bin
 PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/share/coursier/bin
 PATH=$PATH:$HOME/.npm-global/bin
 PATH=$PATH:$GOPATH/bin
 
@@ -93,8 +92,7 @@ if [ "$TERM" = "linux" ]; then
   clear #for background artifacting
 fi
 
-# npm configuration
-export npm_config_prefix=~/.node_modules
+source /usr/share/nvm/init-nvm.sh
 
 # Host-specific extensions/overrides.
 if [[ -f .bashrc.host ]] ; then . .bashrc.host ; fi
