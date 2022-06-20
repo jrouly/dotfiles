@@ -1,16 +1,3 @@
 IdentitiesOnly no
 User jrouly
 ForwardAgent yes
-
-Host bolognas.lan
-Host home.assistant.lan
-Host home.assistant.satellite.1.lan
-
-Host bolognas.local
-Host home-assistant.local
-Host satellite-1.rhasspy.local
-
-Host aur.archlinux.org
-Host jenkins.rouly.net
-Host rhasspy.local
-Host rouly.net
