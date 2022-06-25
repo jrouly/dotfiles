@@ -2,10 +2,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Use WIN key as the global modifier.
 set $mod Mod4
 
 # Font for window titles.
-# Will also be used by the bar unless a different font.
+# Will also be used by the bar unless a different font is used in the bar {} block below.
 font pango:Source Code Pro 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position.
@@ -20,7 +21,7 @@ bindsym $mod+x kill
 # Start a terminal.
 bindsym $mod+Return exec --no-startup-id urxvtc
 
-# dmenu
+# Start dmenu (a program launcher).
 set $dmenu_args -i -fn 'Source Code Pro-11'
 bindsym $mod+d exec --no-startup-id dmenu_run $dmenu_args
 bindsym $mod+p exec --no-startup-id passmenu $dmenu_args
