@@ -16,4 +16,4 @@ PARAMS=(
   --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}
 )
 
-rsync ${PARAMS[@]} / jrouly@bolognas.lan:$(hostname)-system-backup
+rsync ${PARAMS[@]} / jrouly@bolognas.local:$(hostname)-system-backup
