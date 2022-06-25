@@ -22,9 +22,6 @@ fi
 # Set cursor repeat rate.
 xset r rate 200 30
 
-# set wine system architecture.
-export WINEARCH=win64
-
 # Host-specific extensions/overrides.
 if [[ -f .xinitrc.host ]] ; then . .xinitrc.host ; fi
 
