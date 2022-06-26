@@ -1,0 +1,16 @@
+#!/bin/bash
+
+CRITICAL=90
+WARN=50
+
+DISK="${1}"
+CONSUMPTION=$(df --output=pcent "${DISK}" | tr -dc '0-9')
+
+if [[ "${CONSUMPTION}" != "" ]] ; then
+  echo "${DISK} ${CONSUMPTION}%" # full_text
+  echo "${DISK} ${CONSUMPTION}%" # short_text
+
+  # Set critical/warn flags.
+  [[ ${CONSUMPTION} -ge "${CRITICAL}" ]] && exit 33
+  [[ ${CONSUMPTION} -ge "${WARN}" ]] && echo "#FF8000"
+fi

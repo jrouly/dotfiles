@@ -1,0 +1,190 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Use WIN key as the global modifier.
+set $mod Mod4
+
+# Font for window titles.
+# Will also be used by the bar unless a different font is used in the bar {} block below.
+font pango:Source Code Pro 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position.
+floating_modifier $mod
+
+# Use the normal border by default.
+default_border normal
+
+# Kill focused window.
+bindsym $mod+x kill
+
+# Start a terminal.
+bindsym $mod+Return exec --no-startup-id urxvtc
+
+# Start dmenu (a program launcher).
+set $dmenu_args -i -fn 'Source Code Pro-11'
+bindsym $mod+d exec --no-startup-id dmenu_run $dmenu_args
+bindsym $mod+Shift+p exec --no-startup-id passmenu $dmenu_args
+bindsym $mod+m exec --no-startup-id mpdmenu :: $dmenu_args
+bindsym $mod+p exec --no-startup-id 1password --quick-access
+
+# A more modern dmenu replacement is rofi:
+# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+
+# Screenshot.
+bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym XF86Tools exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+XF86Tools exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# Media keys.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle && $refresh_i3status
+bindsym XF86AudioPrev exec --no-startup-id mpc prev && $refresh_i3status
+bindsym XF86AudioNext exec --no-startup-id mpc next && $refresh_i3status
+
+# Change focus.
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window.
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split orientation (horizontal, vertical).
+bindsym $mod+q split vertical
+bindsym $mod+w split horizontal
+bindsym $mod+e split toggle
+
+# Enter fullscreen mode for the focused container.
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (tabbed, split).
+bindsym $mod+Shift+t layout toggle tabbed splith
+
+# Toggle floating.
+bindsym $mod+Shift+space floating toggle
+
+# Toggle focus between tiled/floating windows.
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container.
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend.
+# Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 -e --nofork
+
+# Set up screen locking mode with prompt.
+set $screen_lock loginctl lock-session
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (Shift+r) reboot, (Shift+s) shutdown
+
+mode "$mode_system" {
+  bindsym l exec --no-startup-id $screen_lock, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym s exec --no-startup-id $screen_lock && systemctl suspend, mode "default"
+  bindsym h exec --no-startup-id $screen_lock && systemctl hibernate, mode "default"
+  bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+Shift+q mode "default"
+}
+
+bindsym $mod+Shift+q mode "$mode_system"
+
+# Start i3bar to display a workspace bar.
+# Populate bar with i3blocks.
+bar {
+  status_command i3blocks -c ~/.i3/blocks.conf
+  workspace_buttons yes
+}
+
+# Autostart applications.
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id signal-desktop --use-tray-icon --start-in-tray
+exec --no-startup-id 1password --silent
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift-gtk
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id unclutter
+exec --no-startup-id urxvtd
+exec --no-startup-id volumeicon
+exec --no-startup-id mopidy

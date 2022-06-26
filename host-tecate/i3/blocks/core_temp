@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CRITICAL=50
+WARN=35
+
+TEMPS=(
+  $(cat /sys/devices/platform/nct6775.656/hwmon/hwmon5/temp2_input)
+)
+
+MAX_TEMP=$(printf "%d\n" ${TEMPS[@]} | sort -rn | head -1)
+TEMP=$(echo "${MAX_TEMP} / 1000" | bc -l | cut -d '.' -f 1)
+
+if [[ "${TEMP}" != "" ]] ; then
+  echo "${TEMP}°C"
+  echo "${TEMP}°C"
+
+  # Set critical/warn flags.
+  [[ ${TEMP} -ge "${CRITICAL}" ]] && exit 33
+  [[ ${TEMP} -ge "${WARN}" ]] && echo "#FF8000"
+fi
