@@ -1,0 +1,7 @@
+configuration {
+  combi-modi: "window,ssh,drun,run";
+  modi: "combi";
+  scroll-method: 1;
+  show-icons: true;
+  monitor: "primary";
+}
