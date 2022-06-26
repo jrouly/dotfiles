@@ -21,15 +21,16 @@ bindsym $mod+x kill
 # Start a terminal.
 bindsym $mod+Return exec --no-startup-id urxvtc
 
-# Start dmenu (a program launcher).
+# Start dmenu (backup program launcher).
 set $dmenu_args -i -fn 'Source Code Pro-11'
-bindsym $mod+d exec --no-startup-id dmenu_run $dmenu_args
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run $dmenu_args
 bindsym $mod+Shift+p exec --no-startup-id passmenu $dmenu_args
-bindsym $mod+m exec --no-startup-id mpdmenu :: $dmenu_args
+
+# Rofi: application launcher.
 bindsym $mod+p exec --no-startup-id 1password --quick-access
 
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+# 1Password quick access.
+bindsym $mod+d exec "rofi -show"
 
 # Screenshot.
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
