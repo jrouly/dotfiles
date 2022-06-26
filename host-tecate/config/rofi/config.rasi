@@ -4,4 +4,5 @@ configuration {
   scroll-method: 1;
   show-icons: true;
   monitor: "primary";
+  font: "Source Code Pro 12";
 }
