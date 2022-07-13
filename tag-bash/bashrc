@@ -5,21 +5,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Turn on git bash completion.
-source /usr/share/git/completion/git-completion.bash
-
 # Update columns as window size changes.
 shopt -s checkwinsize
 
-# Global app options.
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+# Set vim as global default editor.
 export EDITOR=vim
-export GOPATH=/home/jrouly/.go
-export JAVA_HOME="/usr/lib/jvm/default"
-export SBT_OPTS="-Xmx2048m -Xms2048m -Duser.timezone=EST -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=128m"
-export VBOX_USB=usbfs
 
-
+# PS1 functions.
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
@@ -32,27 +24,17 @@ if [ "$TERM" != "linux" ]; then
   PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
 fi
 
-
-# CUSTOM PATH ENTRIES; SOME MAY BE OUT OF DATE
+# Default user PATH entries.
 PATH=$PATH:.
 PATH=$PATH:$HOME/bin
-PATH=$PATH:$HOME/.screenlayout
-PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin/
-PATH=$PATH:$HOME/.meteor
-PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/.local/share/coursier/bin
-PATH=$PATH:$HOME/.npm-global/bin
-PATH=$PATH:$GOPATH/bin
 
-
-# aliases
+# Command aliases.
 alias ls='ls --color=auto -N'
 alias ll='ls -lh'
 alias la='ll -A'
 alias lr='ll -R'
 alias l='ll'
 alias more='less'
-alias grep='grep'
 alias df='df -h'
 alias du='du -ch'
 alias mkdir='mkdir -p -v'
@@ -65,9 +47,9 @@ alias rmt='rm -rf $(find . -iname target -type d)'
 alias tf=terraform
 
 function fname() { find . -iname "*$@*"; }
-function mcd() { mkdir $1 && cd $1; }
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 
+# Enable bash completion for "man" command.
 complete -cf man
 
 if [ "$TERM" = "linux" ]; then

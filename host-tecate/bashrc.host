@@ -1,0 +1,18 @@
+# Turn on git bash completion.
+source /usr/share/git/completion/git-completion.bash
+
+# Global app options.
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export JAVA_HOME="/usr/lib/jvm/default"
+export SBT_OPTS="-Xmx2048m -Xms2048m -Duser.timezone=EST -XX:MaxMetaspaceSize=512m -XX:ReservedCodeCacheSize=128m"
+export GOPATH=/home/jrouly/.go
+
+# Extended user PATH entries.
+PATH=$PATH:$HOME/.screenlayout
+PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/share/coursier/bin
+PATH=$PATH:$HOME/.npm-global/bin
+PATH=$PATH:$GOPATH/bin
+
+# Setup nvm (node).
+source /usr/share/nvm/init-nvm.sh
