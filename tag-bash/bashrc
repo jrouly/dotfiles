@@ -92,7 +92,8 @@ if [ "$TERM" = "linux" ]; then
   clear #for background artifacting
 fi
 
-source /usr/share/nvm/init-nvm.sh
+# Activate NodeJS using nvm if installed.
+if [[ -d /usr/share/nvm ]] ; then source /usr/share/nvm/init-nvm.sh ; fi
 
 # Host-specific extensions/overrides.
 if [[ -f .bashrc.host ]] ; then . .bashrc.host ; fi

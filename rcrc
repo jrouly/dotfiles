@@ -1,3 +1,3 @@
 EXCLUDES="README.md"
-TAGS="bash bin git gnupg ssh vim"
+TAGS="bash bin git gnupg latex ssh vim"
 UNDOTTED="bin keys"
