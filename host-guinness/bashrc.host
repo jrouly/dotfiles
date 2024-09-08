@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Always echo the motd on bash session start.
-cat /etc/motd

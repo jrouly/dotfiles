@@ -1,3 +1,0 @@
-EXCLUDES="README.md"
-TAGS="bash bin git gnupg latex ssh vim x"
-UNDOTTED="bin keys"

@@ -1,4 +1,0 @@
-set adjust-open width
-map <C-Up> scroll half-up
-map <C-Down> scroll half-down
-
