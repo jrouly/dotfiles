@@ -26,11 +26,12 @@ set $dmenu_args -i -fn 'Source Code Pro-11'
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run $dmenu_args
 bindsym $mod+Shift+p exec --no-startup-id passmenu $dmenu_args
 
-# Rofi: application launcher.
+# 1Password quick access.
 bindsym $mod+p exec --no-startup-id 1password --quick-access
 
-# 1Password quick access.
+# Rofi: application launcher.
 bindsym $mod+d exec "rofi -show"
+bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -automatic-save-to-history"
 
 # Screenshot.
 bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
@@ -179,7 +180,7 @@ bar {
 
 # Autostart applications.
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id dunst
 exec --no-startup-id signal-desktop --use-tray-icon --start-in-tray
 exec --no-startup-id 1password --silent
 exec --no-startup-id nm-applet
@@ -188,4 +189,6 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id unclutter
 exec --no-startup-id urxvtd
 exec --no-startup-id volumeicon
-exec --no-startup-id mopidy
+exec --no-startup-id blueman-applet
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+exec --no-startup-id xdotool key --clearmodifiers Num_Lock
