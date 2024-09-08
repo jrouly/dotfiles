@@ -1,0 +1,8 @@
+! UI scale (multiple of 96)
+! 1.5x:  144
+! 1.25x: 120
+Xft.dpi: 144
+
+! Cursor scale
+Xcursor.theme: Vanilla-DMZ
+Xcursor.size: 64
