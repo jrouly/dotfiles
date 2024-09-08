@@ -28,6 +28,15 @@ fi
 PATH=$PATH:.
 PATH=$PATH:$HOME/bin
 
+# Explicit XDG configuration.
+XDG_DATA_HOME="$HOME/.local/share"
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_STATE_HOME="$HOME/.local/state"
+XDG_CACHE_HOME="$HOME/.cache"
+# XDG_DATA_DIRS=""
+# XDG_CONFIG_DIRS=""
+# XDG_RUNTIME_DIR=""
+
 # Command aliases.
 alias ls='ls --color=auto -N'
 alias ll='ls -lh'
