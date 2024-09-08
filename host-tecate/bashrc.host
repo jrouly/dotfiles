@@ -11,14 +11,9 @@ export SBT_OPTS="-Xmx2048m -Xms2048m -Duser.timezone=EST -XX:MaxMetaspaceSize=51
 export GOPATH=/home/jrouly/.go
 
 # Extended user PATH entries.
-PATH=$PATH:$HOME/.screenlayout
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$HOME/.local/share/coursier/bin
-PATH=$PATH:$HOME/.npm-global/bin
 PATH=$PATH:$GOPATH/bin
-
-# Setup nvm (node).
-source /usr/share/nvm/init-nvm.sh
 
 # Support gpg-agent as ssh-agent.
 unset SSH_AGENT_PID
