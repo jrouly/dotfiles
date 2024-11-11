@@ -4,7 +4,7 @@ CRITICAL=50
 WARN=35
 
 TEMPS=(
-  $(cat /sys/devices/platform/nct6775.656/hwmon/hwmon5/temp2_input)
+  $(cat /sys/devices/platform/nct6775.656/hwmon/hwmon6/temp2_input)
 )
 
 MAX_TEMP=$(printf "%d\n" ${TEMPS[@]} | sort -rn | head -1)
