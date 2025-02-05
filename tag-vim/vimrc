@@ -95,7 +95,7 @@ set shiftwidth=2   " indent by 2 columns
 set shiftround     " always indent to the nearest tabstop
 set expandtab      " use spaces instead of tabs
 set smarttab       " use spaces at the start of a line, spaces elsewhere
-set tw=75          " set hard word-wrap column at 75
+" set tw=75          " set hard word-wrap column at 75
 filetype indent on " enable automatic indentation based on filetype
 
 
