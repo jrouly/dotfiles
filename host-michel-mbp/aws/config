@@ -1,2 +1,126 @@
-[default]
-region=us-east-1
+[profile default]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 592256656330
+sso_role_name = administrator
+region = us-east-1
+
+[profile power-user]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 592256656330
+sso_role_name = power-user
+region = us-east-1
+
+[profile data-lake-prod]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 699870047376
+sso_role_name = administrator
+region = us-east-1
+
+[profile deployments-production]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 653733980566
+sso_role_name = administrator
+region = us-east-1
+
+[profile deployments-staging]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 307048174022
+sso_role_name = administrator
+region = us-east-1
+
+[profile infrastructure-production]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 477794294201
+sso_role_name = administrator
+region = us-east-1
+
+[profile sandbox-data]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 616527918544
+sso_role_name = administrator
+region = us-east-1
+
+[profile sandbox-security]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 704084484945
+sso_role_name = sandbox-security
+region = us-east-1
+
+[profile security-logging]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 665420293076
+sso_role_name = administrator
+region = us-east-1
+
+[profile security-tools]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 678058844418
+sso_role_name = administrator
+region = us-east-1
+
+[profile workloads-production]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 573196917577
+sso_role_name = administrator
+region = us-east-1
+
+[profile workloads-staging]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 978084641908
+sso_role_name = administrator
+region = us-east-1
+
+[profile security-identity]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 817496761430
+sso_role_name = administrator
+region = us-east-1
+
+[profile healthterm]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 914151076096
+sso_role_name = administrator
+region = us-east-1
+
+
+[profile prod-research]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 573196917577
+sso_role_name = production-research
+region = us-east-1
+
+[profile staging]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 978084641908
+sso_role_name = staging
+region = us-east-1
+
+[profile tf]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 817496761430
+sso_role_name = ops-terraformer
+region = us-east-1
+
+[profile ops-bootstrapper]
+sso_start_url = https://zephyrai.awsapps.com/start
+sso_region = us-east-1
+sso_account_id = 592256656330
+sso_role_name = ops-bootstrapper
+region = us-east-1
