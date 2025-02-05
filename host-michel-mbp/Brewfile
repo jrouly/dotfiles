@@ -1,60 +1,105 @@
-# AWS
-brew "aws-iam-authenticator"
-brew "awscli"
+tap "bufbuild/buf"
+tap "coursier/formulas"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "zephyr-ai/internal", "git@github.com:zephyr-ai/homebrew-internal"
 
-# Python
-brew "poetry"
-brew "python@3.7"
-brew "python@3.9"
+# compression
+brew "xz"
+brew "bzip2"
+brew "zlib"
 
-# Shell
+# shell
 brew "bash"
-brew "bash-completion"
-brew "rcm"
-brew "readline"
-brew "shellcheck"
+brew "bash-completion@2"
 
-# Security
+# unix
 brew "gnupg"
 brew "gnutls"
+brew "gpgme"
 brew "openssl@1.1"
+brew "openssl@3"
+brew "netcat"
+brew "nmap"
+brew "pass"
 brew "pcsc-lite"
-brew "pinentry"
 brew "pinentry-mac"
-
-# Kubernetes
-brew "helm"
-brew "kubernetes-cli"
-cask "lens"
-brew "terraform"
-brew "terraform-docs"
-brew "tflint"
-
-# Languages
-brew "coursier"
-brew "gcc"
-brew "go"
-brew "node"
-brew "nvm"
-brew "openjdk"
-brew "r"
-
-# Apps
-cask "amethyst"
-cask "bitwarden"
-brew "bitwarden-cli"
-brew "git"
-brew "htop"
-cask "iterm2"
-brew "postgresql"
-brew "tig"
+brew "psutils"
 brew "tree"
 brew "watch"
 
-# Etc.
-brew "graphviz"
-brew "libpng"
-brew "sqlite"
+# gRPC
+brew "protobuf"
+brew "grpc"
+brew "buf"
+
+# python
+brew "python@3.7"
+brew "python@3.8"
+brew "python@3.9"
+brew "python@3.10"
+brew "python@3.11"
+brew "python@3.12"
+
+# libraries / languages
+brew "c-blosc"
+brew "cairo"
+brew "cffi"
+brew "cmake"
+brew "cryptography"
+brew "gcc"
+brew "glib"
+brew "go"
+brew "groff"
+brew "hdf5"
 brew "llvm"
-brew "xz"
-brew "zstd"
+brew "openblas"
+brew "openjpeg"
+brew "openjph"
+brew "openslide"
+brew "pycparser"
+brew "thrift"
+brew "r"
+brew "rbenv"
+
+# data
+brew "apache-arrow"
+
+# tools
+brew "awscli"
+brew "dive"
+brew "docutils"
+brew "dos2unix"
+brew "gdal"
+brew "gh" # GitHub
+brew "git"
+brew "git-lfs"
+brew "graphviz"
+brew "helm"
+brew "htop"
+brew "imagemagick"
+brew "jq"
+brew "jsonnet"
+brew "k9s"
+brew "kubernetes-cli"
+brew "nvm"
+brew "opa"
+brew "pipx"
+brew "postgresql@17"
+brew "pre-commit"
+brew "rcm"
+brew "shellcheck"
+brew "tig"
+
+# work
+brew "semgrep"
+brew "zephyr-ai/internal/px"
+
+cask "betterdisplay"
+cask "chromedriver"
+cask "postman"
+cask "virtualbox"
+cask "visualvm"
