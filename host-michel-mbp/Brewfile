@@ -1,10 +1,5 @@
 tap "bufbuild/buf"
 tap "coursier/formulas"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
-tap "homebrew/services"
 tap "zephyr-ai/internal", "git@github.com:zephyr-ai/homebrew-internal"
 
 # compression
@@ -20,7 +15,6 @@ brew "bash-completion@2"
 brew "gnupg"
 brew "gnutls"
 brew "gpgme"
-brew "openssl@1.1"
 brew "openssl@3"
 brew "netcat"
 brew "nmap"
