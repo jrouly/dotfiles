@@ -3,3 +3,4 @@ ForwardAgent yes
 Host rouly.net
   Hostname rouly.net
   User jrouly
+  ForwardAgent yes

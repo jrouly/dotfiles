@@ -7,21 +7,40 @@ fi
 
 # bash-completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[[ -r "/usr/local/etc/bash_completion" ]] && . "/usr/local/etc/bash_completion"
 . "$HOME/.helm-autocomplete.sh"
+complete -C '/usr/local/bin/aws_completer' aws
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.9
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
+. virtualenvwrapper.sh
+
+# Add Poetry to your PATH.
+export PATH="$HOME/.local/bin:$PATH"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+nvm use --lts
+export NPM_CONFIG_AUDIT=false
+
+# rbenv
+eval "$(rbenv init - bash)"
+
+# go
+export GOPATH=$HOME/go
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# docker
+source /Users/michel/.docker/init-bash.sh || true # Added by Docker Desktop
 
 # gpg-agent
 # export GPG_TTY=$(tty)
@@ -48,8 +67,13 @@ function parse_git_status() {
   git status --porcelain=v1 2> /dev/null | wc -l | tr -d ' ' | awk '$1 > 0 {print " (*)"}'
 }
 
+function parse_kubectl_context() {
+  context=$(kubectl config current-context 2> /dev/null | sed 's:.*/::')
+  echo "[k:$context] "
+}
+
 if [ "$TERM" != "linux" ]; then
-  PS1=$'[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
+  PS1=$'$(parse_kubectl_context)[\W\[\033[12;32m\]$(parse_git_branch)$(parse_git_status)\[\033[0m\]]\$ '
 fi
 
 # Aliases.
@@ -64,12 +88,50 @@ alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias vi='vim'
 alias rmt='rm -rf $(find . -iname target -type d)'
+alias rmtf='rm -rf $(find . -iname .terraform -type d)'
+alias rmnm='rm -rf $(find . -iname node_modules -type d)'
 alias c="cd $HOME/code"
 alias tf='terraform'
 alias tfdocs='terraform-docs'
+alias k='kubectl'
+alias pi='poetry install --all-extras --sync'
+alias pu='poetry lock && pi'
+alias ni='npm ci --no-progress --loglevel info'
 
 # Misc functions.
 function fname() { find . -iname "*$@*"; }
 function mcd() { mkdir $1 && cd $1; }
 function psgrep() { ps axu | grep -v grep | grep "$@" -i --color=auto; }
 function flush-dns() { sudo dscacheutil -flushcache ; sudo killall -HUP mDNSResponder; }
+
+# IDEA
+export PATH=$PATH:/Applications/IntelliJ\ IDEA.app/Contents/MacOS/
+
+export ECR=477794294201.dkr.ecr.us-east-1.amazonaws.com
+
+export SKIP=npm-test
+
+# px
+source "$(brew --prefix px)/libexec/bin/pxcli-native.sh"
+eval "$(px autocomplete:script bash)"
+
+function download_egg() {
+  # download a .egg file from CodeArtifact
+  package=$1
+  version=$2
+  python=${3:-3.9}
+
+  aws codeartifact get-package-version-asset \
+    --domain pypi \
+    --domain-owner 477794294201 \
+    --repository private \
+    --format pypi \
+    --package $package \
+    --package-version "$version" \
+    --asset "$package-$version-py$python.egg" \
+    "$package-$version-py$python.egg"
+}
+
+function aws-session-expiration {
+  aws configure get sso_start_url | xargs -I {} grep -h {} ~/.aws/sso/cache/*.json | jq .expiresAt | xargs -I {} sh -c 'TZ="UTC" date -j -f "%Y-%m-%dT%H:%M:%S" "+%s" $1 2>/dev/null' -- {} | xargs date -j -f "%s"
+}
