@@ -115,6 +115,16 @@ export SKIP=npm-test
 source "$(brew --prefix px)/libexec/bin/pxcli-native.sh"
 eval "$(px autocomplete:script bash)"
 
+function cleanup() {
+  echo 'rm target ...'
+  rm -rf $(find . -iname target -type d)
+  echo 'rm terraform ...'
+  rm -rf $(find . -iname .terraform -type d)
+  echo 'rm node_modules ...'
+  rm -rf $(find . -iname node_modules -type d)
+  echo 'done'
+}
+
 function download_egg() {
   # download a .egg file from CodeArtifact
   package=$1
