@@ -1,9 +1,6 @@
 # Turn on git bash completion.
 source /usr/share/git/completion/git-completion.bash
 
-# Add ~/code to CDPATH.
-export CDPATH=$CDPATH:$HOME/code
-
 # Global app options.
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export JAVA_HOME="/usr/lib/jvm/default"

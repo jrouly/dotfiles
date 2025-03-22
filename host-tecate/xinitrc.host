@@ -1,2 +1,6 @@
 # Set resolution for ultrawide monitor.
 ~/.screenlayout/ultrawide.sh
+
+xset r rate 200 30 # Set cursor repeat rate.
+xset -dpms # Disable display power management signaling (DPMS).
+xset s off # Disable screensaver behavior to prevent screen locking.

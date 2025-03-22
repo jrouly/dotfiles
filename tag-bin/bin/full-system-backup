@@ -13,7 +13,7 @@ PARAMS=(
   --numeric-ids  # don't map uid/gid values by user/group name
   --delete       # delete extraneous files from dest dirs
   --info=progress2 # fine-grained informational verbosity
-  --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"}
+  --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/nas/*"}
 )
 
-rsync ${PARAMS[@]} / jrouly@bolognas.local:$(hostname)-system-backup
+rsync ${PARAMS[@]} / jrouly@bolognas.local:Backups/$(hostname)-system-backup
