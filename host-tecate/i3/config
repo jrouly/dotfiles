@@ -19,9 +19,10 @@ default_border normal
 bindsym $mod+x kill
 
 # Start a terminal.
-bindsym $mod+Return exec --no-startup-id \
-    alacritty msg --socket "$XDG_RUNTIME_DIR/alacritty.sock" create-window \
-    || alacritty --socket "$XDG_RUNTIME_DIR/alacritty.sock"
+#bindsym $mod+Return exec --no-startup-id \
+#    alacritty msg --socket "$XDG_RUNTIME_DIR/alacritty.sock" create-window \
+#    || alacritty --socket "$XDG_RUNTIME_DIR/alacritty.sock"
+bindsym $mod+Return exec --no-startup-id urxvtc
 
 # Start dmenu (backup program launcher).
 set $dmenu_args -i -fn 'Source Code Pro-11'
@@ -189,6 +190,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id unclutter
+exec --no-startup-id urxvtd
 exec --no-startup-id volumeicon
 exec --no-startup-id blueman-applet
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
