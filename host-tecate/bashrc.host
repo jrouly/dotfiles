@@ -17,3 +17,9 @@ unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
+
+export AWS_DEFAULT_REGION="us-east-1"
+export AWS_REGION="$AWS_DEFAULT_REGION"
+
+# Enable bash autocompletion for beets.
+eval "$(beet completion)"
