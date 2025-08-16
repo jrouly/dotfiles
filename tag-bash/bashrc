@@ -28,6 +28,9 @@ fi
 PATH=$PATH:.
 PATH=$PATH:$HOME/bin
 
+# node_modules PATH
+PATH=$PATH:./node_modules/.bin/
+
 # Explicit XDG configuration.
 XDG_DATA_HOME="$HOME/.local/share"
 XDG_CONFIG_HOME="$HOME/.config"
@@ -82,9 +85,6 @@ if [ "$TERM" = "linux" ]; then
   setterm -foreground white -store
   clear #for background artifacting
 fi
-
-# Activate NodeJS using nvm if installed.
-if [[ -d /usr/share/nvm ]] ; then source /usr/share/nvm/init-nvm.sh ; fi
 
 # Host-specific extensions/overrides.
 if [[ -f .bashrc.host ]] ; then . .bashrc.host ; fi
