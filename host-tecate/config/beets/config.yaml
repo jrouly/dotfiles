@@ -1,2 +1,56 @@
-directory: /nas/shared/media/music/michel/
+# Note: the music directory here is a symlink to the actual music
+# directory (probably on NAS). This allows beets to build path references
+# in its library.db file that are not dependent on the actual music
+# directory path, which may change.
+directory: /home/jrouly/.config/beets/music/
 library: /home/jrouly/.config/beets/library.db
+
+# Include (year) in output.
+format_album: $albumartist - $album ($year)
+format_item: $albumartist - $album ($year) - [$track/$tracktotal] $title
+
+# Always set album dates to the original release date of the album.
+original_date: yes
+
+sort_album: albumartist+ album+
+sort_item: albumartist+ album+ disc+ track+
+
+import:
+  # beets owns the music directory. When importing new albums, copy files
+  # into the beets music directory.
+  move: no
+  copy: yes
+
+  # Allow beets to write / update metadata tags.
+  write: yes
+  autotag: yes
+
+  # Skip importing duplicates by default instead of prompting every time.
+  duplicate_action: skip
+
+paths:
+  # Organizing music into appropriate directories within the library.
+  # Actual filepaths are otherwise unchanged from defaults.
+  default: Albums/$albumartist/$year - $album%aunique{}/$track $title
+  singleton: Non-Album/$artist/$title
+  comp: Compilations/$year - $album%aunique{}/$track $title
+
+# Plugin configurations follow.
+plugins: web discogs edit fetchart embedart lastgenre lyrics scrub convert duplicates missing
+
+lyrics:
+  auto: yes
+  sources: [genius, tekstowo]  # Disable Google (no API key) and LRCLib (which times out).
+
+convert:
+  auto: no
+
+  # beets can convert music to lower-bitrate formats for external storage.
+  # This is the output directory for those files to avoid mixing up the
+  # higher quality music library.
+  dest: /tmp/beets.converted/
+
+bandcamp:
+  genre:
+    art: yes
+    mode: psychedelic  # Most flexible genre mode.

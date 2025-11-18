@@ -1,0 +1,21 @@
+beets is installed via pipx.
+beets requires Python 3.12.
+
+Getting started:
+
+```
+pipx install --python python3.12 beets
+```
+
+Full initial install:
+
+```
+pipx install --python python3.12 beets[autobpm,chroma,discogs,embedart,fetchart,import,lastgenre,lyrics,mpdstats,scrub,web]
+```
+
+Adding dependencies:
+
+```
+pipx inject --include-apps beets beetcamp python-mpd2
+pipx inject beets beets-audible beets-copyartifacts3
+```
