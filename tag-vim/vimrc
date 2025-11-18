@@ -2,7 +2,6 @@ let mapleader="\\" " set leader
 
 " Includes.
 runtime plug.vim
-runtime coc.vim
 runtime statusline.vim
 
 " General Vim behavior
